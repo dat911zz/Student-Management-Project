@@ -5,10 +5,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using StudentManagement.Interface.IData;
 
 namespace StudentManagement.Data.Files
 {
-    public class SinhVienFile
+    public class SinhVienFile : ISinhVienData
     {
         private string _folderPath;
         private string _filePath;

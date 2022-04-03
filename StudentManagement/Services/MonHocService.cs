@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace StudentManagement.Services
 {
+    /// <summary>
+    /// Class for interact with MonHoc
+    /// </summary>
     public class MonHocService
     {
 

@@ -6,6 +6,5 @@ namespace StudentManagement.Models
     {
         public virtual MonHoc CTMH { get; set; }
         public virtual Diem CTDiem { get; set; }
-
     }
 }

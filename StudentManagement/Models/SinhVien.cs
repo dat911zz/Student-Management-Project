@@ -11,9 +11,8 @@ namespace StudentManagement.Models
         public virtual string GioiTinh { get; set; }
         public virtual DateTime NgaySinh { get; set; }
         public virtual string Lop { get; set; }
-        public virtual string Khoa { get; set; }
-        
-
+        public virtual string Khoa { get; set; }      
+        public virtual CTHocPhan CTHP { get; set; }
         //==================================================================
         //Contructors
         public SinhVien(string ma, string ten, string gioitinh, DateTime ngaysinh, string lop, string khoa)
@@ -24,6 +23,7 @@ namespace StudentManagement.Models
             this.NgaySinh = ngaysinh;
             this.Lop = lop;
             this.Khoa = khoa;
+            this.CTHP = new CTHocPhan();
         }
     }
 }

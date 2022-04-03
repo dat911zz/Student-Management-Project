@@ -4,6 +4,6 @@ namespace StudentManagement.Models
 {
     public class CTHocPhan
     {
-        public virtual List<CTHocPhan> DSMH { get; set; }
+        public virtual List<KetQua> DSMH { get; set; }
     }
 }

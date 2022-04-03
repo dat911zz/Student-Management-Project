@@ -12,7 +12,7 @@ namespace StudentManagement.Data.Database
     //Class for XML Databse (for future)
     public class XML : IDataBase
     {
-        public void Extract(ref List<SinhVien> list_SV, ref List<MonHoc> list_MH)
+        public void Extract()
         {
             Console.Write("\nStage 1");
 

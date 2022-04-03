@@ -12,8 +12,7 @@ namespace StudentManagement.Data.Database
     /// </summary>
     public interface IDataBase
     {
-
-        void Extract(ref List<SinhVien> list_SV, ref List<MonHoc> list_MH);
+        void Extract();
 
     }
 }

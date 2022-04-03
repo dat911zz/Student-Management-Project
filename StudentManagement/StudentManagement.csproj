@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -49,10 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\Database\IDatabase.cs" />
+    <Compile Include="Interface\IData\IDatabase.cs" />
     <Compile Include="Data\Database\SQL.cs" />
     <Compile Include="Data\Database\XML.cs" />
     <Compile Include="Data\Files\SinhVienFile.cs" />
+    <Compile Include="Interface\IData\ISinhVienData.cs" />
+    <Compile Include="Interface\IServices\ISinhVienService.cs" />
     <Compile Include="Models\CTHocPhan.cs" />
     <Compile Include="Models\KetQua.cs" />
     <Compile Include="Services\DiemService.cs" />
@@ -82,6 +85,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Diagrams\ClassDiagram1.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -97,7 +101,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Control\" />
     <Folder Include="Data\ORM\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
