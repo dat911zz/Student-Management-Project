@@ -39,14 +39,16 @@ namespace StudentManagement
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.txtConsole = new System.Windows.Forms.TextBox();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Lop = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Khoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -147,6 +149,7 @@ namespace StudentManagement
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.STT,
             this.MaSV,
             this.TenSV,
             this.GioiTinh,
@@ -159,48 +162,6 @@ namespace StudentManagement
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1300, 298);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // MaSV
-            // 
-            this.MaSV.HeaderText = "MSSV";
-            this.MaSV.MinimumWidth = 6;
-            this.MaSV.Name = "MaSV";
-            this.MaSV.Width = 125;
-            // 
-            // TenSV
-            // 
-            this.TenSV.HeaderText = "Họ và Tên";
-            this.TenSV.MinimumWidth = 6;
-            this.TenSV.Name = "TenSV";
-            this.TenSV.Width = 125;
-            // 
-            // GioiTinh
-            // 
-            this.GioiTinh.HeaderText = "Giới tính";
-            this.GioiTinh.MinimumWidth = 6;
-            this.GioiTinh.Name = "GioiTinh";
-            this.GioiTinh.Width = 125;
-            // 
-            // NgaySinh
-            // 
-            this.NgaySinh.HeaderText = "Ngày sinh";
-            this.NgaySinh.MinimumWidth = 6;
-            this.NgaySinh.Name = "NgaySinh";
-            this.NgaySinh.Width = 125;
-            // 
-            // Lop
-            // 
-            this.Lop.HeaderText = "Lớp";
-            this.Lop.MinimumWidth = 6;
-            this.Lop.Name = "Lop";
-            this.Lop.Width = 125;
-            // 
-            // Khoa
-            // 
-            this.Khoa.HeaderText = "Khóa";
-            this.Khoa.MinimumWidth = 6;
-            this.Khoa.Name = "Khoa";
-            this.Khoa.Width = 125;
             // 
             // panel6
             // 
@@ -218,11 +179,85 @@ namespace StudentManagement
             this.panel7.Size = new System.Drawing.Size(502, 192);
             this.panel7.TabIndex = 5;
             // 
+            // txtConsole
+            // 
+            this.txtConsole.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtConsole.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtConsole.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtConsole.ForeColor = System.Drawing.Color.Lime;
+            this.txtConsole.Location = new System.Drawing.Point(202, 578);
+            this.txtConsole.Margin = new System.Windows.Forms.Padding(4);
+            this.txtConsole.Multiline = true;
+            this.txtConsole.Name = "txtConsole";
+            this.txtConsole.ReadOnly = true;
+            this.txtConsole.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txtConsole.Size = new System.Drawing.Size(810, 100);
+            this.txtConsole.TabIndex = 23;
+            this.txtConsole.WordWrap = false;
+            // 
+            // STT
+            // 
+            this.STT.HeaderText = "STT";
+            this.STT.MinimumWidth = 6;
+            this.STT.Name = "STT";
+            this.STT.Width = 50;
+            // 
+            // MaSV
+            // 
+            this.MaSV.DataPropertyName = "MaSV";
+            this.MaSV.HeaderText = "MSSV";
+            this.MaSV.MinimumWidth = 6;
+            this.MaSV.Name = "MaSV";
+            this.MaSV.Width = 125;
+            // 
+            // TenSV
+            // 
+            this.TenSV.DataPropertyName = "TenSV";
+            this.TenSV.HeaderText = "Họ và Tên";
+            this.TenSV.MinimumWidth = 6;
+            this.TenSV.Name = "TenSV";
+            this.TenSV.Width = 125;
+            // 
+            // GioiTinh
+            // 
+            this.GioiTinh.DataPropertyName = "GioiTinh";
+            this.GioiTinh.HeaderText = "Giới tính";
+            this.GioiTinh.MinimumWidth = 6;
+            this.GioiTinh.Name = "GioiTinh";
+            this.GioiTinh.Width = 125;
+            // 
+            // NgaySinh
+            // 
+            this.NgaySinh.DataPropertyName = "NgaySinh";
+            this.NgaySinh.HeaderText = "Ngày sinh";
+            this.NgaySinh.MinimumWidth = 6;
+            this.NgaySinh.Name = "NgaySinh";
+            this.NgaySinh.Width = 125;
+            // 
+            // Lop
+            // 
+            this.Lop.DataPropertyName = "Lop";
+            this.Lop.HeaderText = "Lớp";
+            this.Lop.MinimumWidth = 6;
+            this.Lop.Name = "Lop";
+            this.Lop.Width = 125;
+            // 
+            // Khoa
+            // 
+            this.Khoa.DataPropertyName = "Khoa";
+            this.Khoa.HeaderText = "Khóa";
+            this.Khoa.MinimumWidth = 6;
+            this.Khoa.Name = "Khoa";
+            this.Khoa.Width = 125;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1582, 686);
+            this.Controls.Add(this.txtConsole);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel3);
@@ -239,6 +274,7 @@ namespace StudentManagement
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -253,16 +289,18 @@ namespace StudentManagement
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.BindingSource sinhVienBindingSource;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Button GetDataBtn;
+        private System.Windows.Forms.Button InputScoreBtn;
+        private System.Windows.Forms.Button SearchBtn;
+        private System.Windows.Forms.TextBox txtConsole;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaSV;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenSV;
         private System.Windows.Forms.DataGridViewTextBoxColumn GioiTinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgaySinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn Lop;
         private System.Windows.Forms.DataGridViewTextBoxColumn Khoa;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Button GetDataBtn;
-        private System.Windows.Forms.Button InputScoreBtn;
-        private System.Windows.Forms.Button SearchBtn;
     }
 }
 

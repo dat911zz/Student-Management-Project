@@ -38,5 +38,15 @@ namespace StudentManagement.Data.Files
             }
             return result;
         }
+
+        public List<MonHoc> GetAllMH()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public List<SinhVien> GetAllSV()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

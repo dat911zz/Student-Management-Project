@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StudentManagement.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,11 @@ namespace StudentManagement.Services
     /// </summary>
     public class MonHocService
     {
-
+        //Ghi dữ liệu của môn học
+        public virtual void setData(MonHoc mh, string TenMH, int SoTiet)
+        {
+            mh.tenMH = TenMH;
+            mh.soTiet = SoTiet;
+        }
     }
 }

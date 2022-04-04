@@ -1,18 +1,24 @@
-﻿using StudentManagement.Models;
+﻿using StudentManagement.Interface.IData;
+using StudentManagement.Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace StudentManagement.Data.Database
 {
     /// <summary>
     /// Interacting with SQL Databse 
     /// </summary>
-    public class SQL
+    public class SQL : ISinhVienData
     {
         //---log test server name : DESKTOP-GUE0JS7
-        SqlCommand cmd = new SqlCommand();
+        SqlCommand cmd;
+        SqlDataAdapter da;
+        SqlCommandBuilder builder;
+        DataTable tb;
         Utilites.DatabaseHelper unt = new Utilites.DatabaseHelper();
         //Khởi tạo kết nối tới CSDL
         public SqlConnection GetConnection(string datasource, string database, string username, string password)
@@ -30,107 +36,100 @@ namespace StudentManagement.Data.Database
             string password = "1234";
             return GetConnection(datasource, database, username, password);
         }
-        ////Lấy thông tin từ bảng DSSV
-        //public void extractDSSVTable(string query, ref List<SinhVien> list)
-        //{
-        //    cmd.CommandText = query;
-        //    using (DbDataReader reader = cmd.ExecuteReader())
-        //    {
-        //        if (reader.HasRows)
-        //        {
-        //            while (reader.Read())
-        //            {
-        //                string mssv = reader.GetString(0);
-        //                string tensv = reader.GetString(1);
-        //                string gioitinh = reader.GetString(2);
-        //                DateTime ngaysinh = reader.GetDateTime(3);
-        //                string lop = reader.GetString(4);
-        //                string khoa = reader.GetString(5);
-        //                SinhVien sv = new SinhVien(mssv, tensv, gioitinh, ngaysinh, lop, khoa);
-        //                list.Add(sv);
-        //            }
-        //        }
-        //    }
-        //}
-        ////Lấy thông tin từ bảng DKHP
-        //public void extractDKHPTable(string query, ref List<SinhVien> list_sv, ref List<MonHoc> list_mh)
-        //{
-        //    cmd.CommandText = query;
-        //    using (DbDataReader reader = cmd.ExecuteReader())
-        //    {
-        //        int i = 0;
-        //        if (reader.HasRows)
-        //        {
-        //            while (reader.Read())
-        //            {
-        //                List<MonHoc> tmp = new List<MonHoc>(list_mh.ToArray());
-        //                //-------------INPUT DATA----------------
-        //                for (int mh_i = 0; mh_i < reader.FieldCount; mh_i++)
-        //                {
-        //                    if (reader.GetInt32(mh_i) == 1)
-        //                    {
-        //                        //========Deep copy========= 
-        //                        var c = tmp[mh_i].Clone();
-        //                        list_sv[i].MHDK.Add((MonHoc)c);
-        //                    }
-        //                }
-        //                i++;
-        //            }
-        //        }
-        //    }
-        //}
-        ////Lấy thông tin từ bảng MonHoc
-        //public void extractMonHocTable(string query, ref List<MonHoc> list)
-        //{
-        //    cmd.CommandText = query;
-        //    using (DbDataReader reader = cmd.ExecuteReader())
-        //    {
-        //        if (reader.HasRows)
-        //        {
-        //            while (reader.Read())
-        //            {
-        //                string monhoc = reader.GetString(0);
-        //                int sotiet = reader.GetInt32(1);
-        //                MonHoc mh = new MonHoc(monhoc, sotiet);
-        //                list.Add(mh);
-        //            }
-        //        }
-        //    }
-        //}
-        //Lấy toàn bộ thông tin từ CSDL
-        public void Extract(ref List<SinhVien> list_sv, ref List<MonHoc> list_mh)
+
+        public DataTable SetDataSinhVien()
         {
-            string query1 = "SELECT * FROM SinhVien";
-            string query2 = "SELECT * FROM MonHoc";
-            string query3 = "SELECT * FROM dkhp";
+            return SetDataTable("dataGridView1", "SELECT * FROM SinhVien");
+        }
+        public DataTable SetDataMonHoc()
+        {
+            return SetDataTable("dataGridView1", "SELECT * FROM MonHoc");
+        }
 
-            Console.WriteLine("Getting Connection ...");
+        public DataTable SetDataTable(string datagridview, string query)
+        {
+            tb = new DataTable(datagridview);
+            da = new SqlDataAdapter();
+            da.SelectCommand = new SqlCommand(query, GetConnection());
+            builder = new SqlCommandBuilder(da);
+            da.Fill(tb);
+            return tb;
+        }
+        public void UpdateData(DataTable tb)
+        {
+            if (da != null && builder != null)
+            {
+                da.Update(tb);
+            }
+        }
+        public void FillGrid(DataGridView dgv)
+        {
             SqlConnection conn = GetConnection();
+            conn.Open();
+            cmd = new SqlCommand("SELECT * FROM SinhVien", conn);
+            DataTable tbl = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(tbl);
+            dgv.DataSource = tbl;
+            dgv.ReadOnly = true;
+            conn.Close();
+        }
+        public List<SinhVien> GetAllSV()
+        {
+            List<SinhVien> list = new List<SinhVien>();
+            SqlConnection conn = GetConnection();
+            conn.Open();
+            cmd = new SqlCommand("SELECT * FROM SinhVien", conn);
+            using (DbDataReader reader = cmd.ExecuteReader())
+            {
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        string mssv = reader.GetString(0);
+                        string tensv = reader.GetString(1);
+                        string gioitinh = reader.GetString(2);
+                        DateTime ngaysinh = reader.GetDateTime(3);
+                        string lop = reader.GetString(4);
+                        string khoa = reader.GetString(5);
+                        SinhVien sv = new SinhVien(mssv, tensv, gioitinh, ngaysinh, lop, khoa);
+                        list.Add(sv);
+                    }
+                }
+            }
+            conn.Close();
+            return list;
+        }
 
-            try
+        public List<MonHoc> GetAllMH()
+        {
+            List<MonHoc> list = new List<MonHoc>();
+            SqlConnection conn = GetConnection();
+            conn.Open();
+            cmd = new SqlCommand("SELECT * FROM MonHoc", conn);
+            using (DbDataReader reader = cmd.ExecuteReader())
             {
-                Console.WriteLine("Openning Connection ...");
-                conn.Open();
-                Console.BackgroundColor = ConsoleColor.DarkGreen;
-                Console.ForegroundColor = ConsoleColor.White;
-                Console.WriteLine("Connection successful!");
-                Console.ResetColor();
-                cmd.Connection = conn;
-                //-------------------------------------
-                //extractDSSVTable(query1, ref list_sv);
-                //extractMonHocTable(query2, ref list_mh);
-                //extractDKHPTable(query3, ref list_sv, ref list_mh);
-                //-------------------------------------
-                conn.Close();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        string ten = reader.GetString(0);
+                        int sotiet = reader.GetInt32(1);
+                        MonHoc sv = new MonHoc(ten, sotiet);
+                        list.Add(sv);
+                    }
+                }
             }
-            catch (Exception e)
-            {
-                Console.BackgroundColor = ConsoleColor.DarkRed;
-                Console.ForegroundColor = ConsoleColor.White;
-                Console.WriteLine("Error: " + e.Message);
-                Console.ResetColor();
-            }
-            Console.Read();
+            conn.Close();
+            return list;
+        }
+        public List<Diem> GetAllDiem()
+        {
+            throw new NotImplementedException();
+        }
+        public void Add(SinhVien sv)
+        {
+            throw new NotImplementedException();
         }
     }
 }

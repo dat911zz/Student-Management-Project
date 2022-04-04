@@ -9,7 +9,8 @@ namespace StudentManagement.Interface.IData
 {
     public interface ISinhVienData
     {
-        List<SinhVien> GetAll();
+        List<SinhVien> GetAllSV();
+        List<MonHoc> GetAllMH();
         void Add(SinhVien sv);      
     }
 }

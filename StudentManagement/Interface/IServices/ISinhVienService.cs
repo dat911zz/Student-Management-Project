@@ -9,7 +9,8 @@ namespace StudentManagement.Interface.IServices
 {
     public interface ISinhVienService
     {
-        List<SinhVien> GetAll();
+        List<SinhVien> GetAllSV();
+        List<MonHoc> GetAllMH();
         SinhVien Create(string ma, string ten, string gioitinh, DateTime ns, string lop, string khoa);
     }
 }

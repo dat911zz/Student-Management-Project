@@ -15,6 +15,9 @@ namespace StudentManagement.Models
         public virtual CTHocPhan CTHP { get; set; }
         //==================================================================
         //Contructors
+        /// <summary>
+        /// Class for SinhVien
+        /// </summary>
         public SinhVien(string ma, string ten, string gioitinh, DateTime ngaysinh, string lop, string khoa)
         {
             this.MaSV = ma;

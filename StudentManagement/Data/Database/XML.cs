@@ -6,16 +6,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using StudentManagement.Interface.IData;
 
 namespace StudentManagement.Data.Database
 {
     //Class for XML Databse (for future)
-    public class XML : IDataBase
+    public class XML : ISinhVienData
     {
-        public void Extract()
+        public void Add(SinhVien sv)
         {
-            Console.Write("\nStage 1");
+            throw new NotImplementedException();
+        }
+        public List<MonHoc> GetAllMH()
+        {
+            throw new NotImplementedException();
+        }
 
-        }      
+        public List<SinhVien> GetAllSV()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

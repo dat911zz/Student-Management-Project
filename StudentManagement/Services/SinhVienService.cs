@@ -20,9 +20,13 @@ namespace StudentManagement.Services
         {
             return new SinhVien(ma, ten, gioitinh, ns, lop, khoa);
         }
-        public List<SinhVien> GetAll()
+        public List<SinhVien> GetAllSV()
         {
-            return _svData.GetAll();
+            return _svData.GetAllSV();
+        }
+        public List<MonHoc> GetAllMH()
+        {
+            return _svData.GetAllMH();
         }
     }
 }
