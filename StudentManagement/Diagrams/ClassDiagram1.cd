@@ -2,6 +2,22 @@
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="StudentManagement.Utilites.DatabaseHelper" Collapsed="true">
     <Position X="9.5" Y="0.5" Width="1.5" />
+    <InheritanceLine Type="System.Object" ManuallyRouted="true">
+      <Path>
+        <Point X="8.75" Y="2.25" />
+        <Point X="8.75" Y="3.695" />
+        <Point X="8.917" Y="3.695" Type="JumpStart" />
+        <Point X="9.083" Y="3.695" Type="JumpEnd" />
+        <Point X="9.97" Y="3.695" Type="JumpStart" />
+        <Point X="10.3" Y="3.695" Type="JumpEnd" />
+        <Point X="13.852" Y="3.695" Type="JumpStart" />
+        <Point X="14.153" Y="3.695" Type="JumpEnd" />
+        <Point X="14.221" Y="3.695" />
+        <Point X="14.221" Y="1.249" />
+        <Point X="10.25" Y="1.249" />
+        <Point X="10.25" Y="1.062" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Utilites\DatabaseHelper.cs</FileName>
@@ -9,28 +25,80 @@
   </Class>
   <Class Name="StudentManagement.Services.DiemService" Collapsed="true">
     <Position X="6.5" Y="4.25" Width="1.5" />
+    <InheritanceLine Type="System.Object" ManuallyRouted="true">
+      <Path>
+        <Point X="8.75" Y="2.812" />
+        <Point X="8.75" Y="3.58" />
+        <Point X="7.25" Y="3.58" />
+        <Point X="7.25" Y="4.25" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAEAAAAAAAABAAAAAAAAAAAAAAQAAAAAAA=</HashCode>
       <FileName>Services\DiemService.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="StudentManagement.Services.MonHocService" Collapsed="true">
     <Position X="8.25" Y="4.25" Width="1.5" />
+    <InheritanceLine Type="System.Object" ManuallyRouted="true">
+      <Path>
+        <Point X="8.75" Y="2.812" />
+        <Point X="8.75" Y="3.413" />
+        <Point X="9" Y="3.413" />
+        <Point X="9" Y="4.25" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Services\MonHocService.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="StudentManagement.Services.SinhVienService" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="6.5" Y="5.25" Width="1.5" />
+    <Position X="4.75" Y="4.25" Width="1.5" />
+    <InheritanceLine Type="System.Object" ManuallyRouted="true">
+      <Path>
+        <Point X="8.75" Y="2.812" />
+        <Point X="8.75" Y="3.404" />
+        <Point X="6.733" Y="3.404" Type="JumpStart" />
+        <Point X="6.566" Y="3.404" Type="JumpEnd" />
+        <Point X="6.34" Y="3.404" />
+        <Point X="6.34" Y="5.01" />
+        <Point X="5.5" Y="5.01" />
+        <Point X="5.5" Y="4.25" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAgAEAAAAAAA=</HashCode>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAAAAAAAAEQAAAAEAAAAAAA=</HashCode>
       <FileName>Services\SinhVienService.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="StudentManagement.Models.CTHocPhan">
     <Position X="3" Y="0.5" Width="1.5" />
+    <InheritanceLine Type="System.Object" ManuallyRouted="true">
+      <Path>
+        <Point X="8.75" Y="2.25" />
+        <Point X="8.75" Y="1.978" />
+        <Point X="7.833" Y="1.978" Type="JumpStart" />
+        <Point X="7.667" Y="1.978" Type="JumpEnd" />
+        <Point X="7.272" Y="1.978" Type="JumpStart" />
+        <Point X="7.105" Y="1.978" Type="JumpEnd" />
+        <Point X="7.045" Y="1.978" Type="JumpStart" />
+        <Point X="6.878" Y="1.978" Type="JumpEnd" />
+        <Point X="6.733" Y="1.978" Type="JumpStart" />
+        <Point X="6.566" Y="1.978" Type="JumpEnd" />
+        <Point X="4.997" Y="1.978" />
+        <Point X="4.997" Y="2.491" />
+        <Point X="3.833" Y="2.491" Type="JumpStart" />
+        <Point X="3.667" Y="2.491" Type="JumpEnd" />
+        <Point X="3.439" Y="2.491" />
+        <Point X="3.439" Y="2.146" />
+        <Point X="4.884" Y="2.146" />
+        <Point X="4.884" Y="1.938" />
+        <Point X="3.75" Y="1.938" />
+        <Point X="3.75" Y="1.603" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\CTHocPhan.cs</FileName>
@@ -38,6 +106,26 @@
   </Class>
   <Class Name="StudentManagement.Models.Diem" Collapsed="true">
     <Position X="4.75" Y="0.5" Width="1.5" />
+    <InheritanceLine Type="System.Object" ManuallyRouted="true">
+      <Path>
+        <Point X="8.75" Y="2.25" />
+        <Point X="8.75" Y="4.151" />
+        <Point X="8.917" Y="4.151" Type="JumpStart" />
+        <Point X="9.083" Y="4.151" Type="JumpEnd" />
+        <Point X="14.588" Y="4.151" />
+        <Point X="14.588" Y="1.515" />
+        <Point X="14.304" Y="1.515" Type="JumpStart" />
+        <Point X="14.138" Y="1.515" Type="JumpEnd" />
+        <Point X="13.333" Y="1.515" Type="JumpStart" />
+        <Point X="13.167" Y="1.515" Type="JumpEnd" />
+        <Point X="10.3" Y="1.515" Type="JumpStart" />
+        <Point X="10.133" Y="1.515" Type="JumpEnd" />
+        <Point X="7.333" Y="1.515" Type="JumpStart" />
+        <Point X="7.167" Y="1.515" Type="JumpEnd" />
+        <Point X="5.5" Y="1.515" />
+        <Point X="5.5" Y="1.062" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADA=</HashCode>
       <FileName>Models\Diem.cs</FileName>
@@ -45,6 +133,20 @@
   </Class>
   <Class Name="StudentManagement.Models.KetQua" Collapsed="true">
     <Position X="6.5" Y="0.5" Width="1.5" />
+    <InheritanceLine Type="System.Object" ManuallyRouted="true">
+      <Path>
+        <Point X="8.75" Y="2.25" />
+        <Point X="8.75" Y="3.793" />
+        <Point X="7.333" Y="3.793" Type="JumpStart" />
+        <Point X="7.167" Y="3.793" Type="JumpEnd" />
+        <Point X="6.65" Y="3.793" />
+        <Point X="6.65" Y="1.777" />
+        <Point X="6.878" Y="1.777" Type="JumpStart" />
+        <Point X="7.045" Y="1.777" Type="JumpEnd" />
+        <Point X="7.25" Y="1.777" />
+        <Point X="7.25" Y="1.062" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAACA=</HashCode>
       <FileName>Models\KetQua.cs</FileName>
@@ -52,6 +154,22 @@
   </Class>
   <Class Name="StudentManagement.Models.MonHoc" Collapsed="true">
     <Position X="3" Y="3" Width="1.5" />
+    <InheritanceLine Type="System.Object" ManuallyRouted="true">
+      <Path>
+        <Point X="8.75" Y="2.812" />
+        <Point X="8.75" Y="3.237" />
+        <Point X="7.488" Y="3.237" />
+        <Point X="7.488" Y="2.337" />
+        <Point X="7.045" Y="2.337" Type="JumpStart" />
+        <Point X="6.878" Y="2.337" Type="JumpEnd" />
+        <Point X="6.733" Y="2.337" Type="JumpStart" />
+        <Point X="6.566" Y="2.337" Type="JumpEnd" />
+        <Point X="5.081" Y="2.337" Type="JumpStart" />
+        <Point X="4.914" Y="2.337" Type="JumpEnd" />
+        <Point X="3.75" Y="2.337" />
+        <Point X="3.75" Y="3" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAQAAAAAAAA=</HashCode>
       <FileName>Models\MonHoc.cs</FileName>
@@ -59,6 +177,22 @@
   </Class>
   <Class Name="StudentManagement.Models.SinhVien" Collapsed="true">
     <Position X="4.75" Y="3" Width="1.5" />
+    <InheritanceLine Type="System.Object" ManuallyRouted="true">
+      <Path>
+        <Point X="8.75" Y="2.812" />
+        <Point X="8.75" Y="3.062" />
+        <Point X="7.75" Y="3.062" />
+        <Point X="7.75" Y="1.611" />
+        <Point X="7.333" Y="1.611" Type="JumpStart" />
+        <Point X="7.167" Y="1.611" Type="JumpEnd" />
+        <Point X="6.961" Y="1.611" />
+        <Point X="6.961" Y="2.543" />
+        <Point X="6.733" Y="2.543" Type="JumpStart" />
+        <Point X="6.566" Y="2.543" Type="JumpEnd" />
+        <Point X="5.5" Y="2.543" />
+        <Point X="5.5" Y="3" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAAEAAAAAAAAAAAAAAAAAAAAAQgAAAEAAAAAAAAAIAI=</HashCode>
       <FileName>Models\SinhVien.cs</FileName>
@@ -66,49 +200,92 @@
   </Class>
   <Class Name="StudentManagement.Data.Database.SQL" Collapsed="true">
     <Position X="12.5" Y="1.75" Width="1.5" />
+    <InheritanceLine Type="System.Object" ManuallyRouted="true">
+      <Path>
+        <Point X="8.75" Y="2.25" />
+        <Point X="8.75" Y="3.277" />
+        <Point X="9.97" Y="3.277" Type="JumpStart" />
+        <Point X="10.3" Y="3.277" Type="JumpEnd" />
+        <Point X="13.852" Y="3.277" Type="JumpStart" />
+        <Point X="14.019" Y="3.277" Type="JumpEnd" />
+        <Point X="14.07" Y="3.277" />
+        <Point X="14.07" Y="3.864" />
+        <Point X="14.019" Y="3.864" Type="JumpStart" />
+        <Point X="13.852" Y="3.864" Type="JumpEnd" />
+        <Point X="10.217" Y="3.864" />
+        <Point X="10.217" Y="1.366" />
+        <Point X="13.25" Y="1.366" />
+        <Point X="13.25" Y="2.312" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAAAAgAAAAAAQAQAAAAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <HashCode>BEIgAgAAEAAAABYAAAAAAAAAAAAIAAQgAIAAABBAAAA=</HashCode>
       <FileName>Data\Database\SQL.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="StudentManagement.Data.Database.XML" Collapsed="true" BaseTypeListCollapsed="true">
     <Position X="10.75" Y="2.5" Width="1.5" />
+    <InheritanceLine Type="System.Object" ManuallyRouted="true">
+      <Path>
+        <Point X="9.5" Y="2.656" />
+        <Point X="10.053" Y="2.656" />
+        <Point X="10.053" Y="4.04" />
+        <Point X="13.935" Y="4.04" />
+        <Point X="13.935" Y="3.136" />
+        <Point X="10.49" Y="3.136" />
+        <Point X="10.49" Y="2.656" />
+        <Point X="10.75" Y="2.656" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>BAIAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
       <FileName>Data\Database\XML.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="StudentManagement.Data.Files.SinhVienFile" Collapsed="true" BaseTypeListCollapsed="true">
     <Position X="10.75" Y="1.75" Width="1.5" />
+    <InheritanceLine Type="System.Object" ManuallyRouted="true">
+      <Path>
+        <Point X="8.75" Y="2.25" />
+        <Point X="8.75" Y="2.112" />
+        <Point X="7.833" Y="2.112" Type="JumpStart" />
+        <Point X="7.667" Y="2.112" Type="JumpEnd" />
+        <Point X="7.189" Y="2.112" />
+        <Point X="7.189" Y="1.831" />
+        <Point X="7.667" Y="1.831" Type="JumpStart" />
+        <Point X="7.833" Y="1.831" Type="JumpEnd" />
+        <Point X="8.966" Y="1.831" />
+        <Point X="8.966" Y="1.645" />
+        <Point X="10.133" Y="1.645" Type="JumpStart" />
+        <Point X="10.3" Y="1.645" Type="JumpEnd" />
+        <Point X="10.532" Y="1.645" />
+        <Point X="10.532" Y="2.031" />
+        <Point X="10.75" Y="2.031" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAIAAAAAAAAAAAAAAAgCAAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <HashCode>BAIAAAAAAAAAAAAAAAgCAAAAAAAAAAQAAgAAAAAAAAA=</HashCode>
       <FileName>Data\Files\SinhVienFile.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="System.Object" Collapsed="true">
-    <Position X="8" Y="2.5" Width="1.5" />
+    <Position X="8" Y="2.25" Width="1.5" />
     <TypeIdentifier />
   </Class>
-  <Interface Name="StudentManagement.Data.Database.IDataBase" Collapsed="true">
-    <Position X="10.75" Y="4.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Interface\IData\IDatabase.cs</FileName>
-    </TypeIdentifier>
-  </Interface>
   <Interface Name="StudentManagement.Interface.IData.ISinhVienData" Collapsed="true">
     <Position X="12.5" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <HashCode>BAIAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
       <FileName>Interface\IData\ISinhVienData.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="StudentManagement.Interface.IServices.ISinhVienService" Collapsed="true">
-    <Position X="10.75" Y="5" Width="1.5" />
+    <Position X="10.75" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAgAAAAAAAAA=</HashCode>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAAAAAAAAEQAAAAAAAAAAAA=</HashCode>
       <FileName>Interface\IServices\ISinhVienService.cs</FileName>
     </TypeIdentifier>
   </Interface>

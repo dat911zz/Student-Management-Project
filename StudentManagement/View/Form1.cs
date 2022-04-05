@@ -19,6 +19,7 @@ namespace StudentManagement
         SinhVienService service = new SinhVienService(new SQL());
         public List<SinhVien> list_sv;
         public List<MonHoc> list_mh;
+
         public Form1()
         {
             InitializeComponent();
@@ -29,8 +30,7 @@ namespace StudentManagement
         private void Form1_Load(object sender, EventArgs e)
         {
             TextBoxWriter writer = new TextBoxWriter(txtConsole);
-            Console.SetOut(writer);
-            
+            Console.SetOut(writer);            
         }
 
         private void GetDataBtn_Click(object sender, EventArgs e)
