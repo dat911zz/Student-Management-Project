@@ -39,9 +39,6 @@ namespace StudentManagement
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.txtConsole = new System.Windows.Forms.TextBox();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,6 +46,9 @@ namespace StudentManagement
             this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Lop = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Khoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.txtConsole = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -163,40 +163,6 @@ namespace StudentManagement
             this.dataGridView1.Size = new System.Drawing.Size(1300, 298);
             this.dataGridView1.TabIndex = 0;
             // 
-            // panel6
-            // 
-            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel6.Location = new System.Drawing.Point(202, 379);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(802, 192);
-            this.panel6.TabIndex = 4;
-            // 
-            // panel7
-            // 
-            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel7.Location = new System.Drawing.Point(1010, 379);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(502, 192);
-            this.panel7.TabIndex = 5;
-            // 
-            // txtConsole
-            // 
-            this.txtConsole.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtConsole.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtConsole.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConsole.ForeColor = System.Drawing.Color.Lime;
-            this.txtConsole.Location = new System.Drawing.Point(202, 578);
-            this.txtConsole.Margin = new System.Windows.Forms.Padding(4);
-            this.txtConsole.Multiline = true;
-            this.txtConsole.Name = "txtConsole";
-            this.txtConsole.ReadOnly = true;
-            this.txtConsole.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtConsole.Size = new System.Drawing.Size(810, 100);
-            this.txtConsole.TabIndex = 23;
-            this.txtConsole.WordWrap = false;
-            // 
             // STT
             // 
             this.STT.HeaderText = "STT";
@@ -251,6 +217,40 @@ namespace StudentManagement
             this.Khoa.MinimumWidth = 6;
             this.Khoa.Name = "Khoa";
             this.Khoa.Width = 125;
+            // 
+            // panel6
+            // 
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel6.Location = new System.Drawing.Point(202, 379);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(802, 192);
+            this.panel6.TabIndex = 4;
+            // 
+            // panel7
+            // 
+            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel7.Location = new System.Drawing.Point(1010, 379);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(502, 192);
+            this.panel7.TabIndex = 5;
+            // 
+            // txtConsole
+            // 
+            this.txtConsole.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtConsole.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtConsole.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtConsole.ForeColor = System.Drawing.Color.Lime;
+            this.txtConsole.Location = new System.Drawing.Point(202, 578);
+            this.txtConsole.Margin = new System.Windows.Forms.Padding(4);
+            this.txtConsole.Multiline = true;
+            this.txtConsole.Name = "txtConsole";
+            this.txtConsole.ReadOnly = true;
+            this.txtConsole.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txtConsole.Size = new System.Drawing.Size(810, 100);
+            this.txtConsole.TabIndex = 23;
+            this.txtConsole.WordWrap = false;
             // 
             // Form1
             // 

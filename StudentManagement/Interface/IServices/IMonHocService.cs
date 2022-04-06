@@ -5,11 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudentManagement.Interface.IData
+namespace StudentManagement.Interface.IServices
 {
-    public interface ISinhVienData
+    public interface IMonHocService
     {
-        List<SinhVien> GetAllSV();
-        void Add(SinhVien sv);      
+        List<MonHoc> GetAll();
+        MonHoc Create(string tenMH, int soTiet);
     }
 }

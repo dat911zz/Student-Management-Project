@@ -25,7 +25,7 @@ namespace StudentManagement.Data.Files
             File.AppendAllLines(_filePath, new[] { JsonConvert.SerializeObject(student) });
         }
 
-        public List<SinhVien> GetAll()
+        public List<SinhVien> GetAllSV()
         {
             var result = new List<SinhVien>();
             if (File.Exists(_filePath))
@@ -37,16 +37,6 @@ namespace StudentManagement.Data.Files
                 }
             }
             return result;
-        }
-
-        public List<MonHoc> GetAllMH()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public List<SinhVien> GetAllSV()
-        {
-            throw new System.NotImplementedException();
         }
     }
 }

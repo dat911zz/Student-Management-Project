@@ -20,13 +20,20 @@ namespace StudentManagement.Services
         {
             return new SinhVien(ma, ten, gioitinh, ns, lop, khoa);
         }
-        public List<SinhVien> GetAllSV()
+        public List<SinhVien> GetAll()
         {
             return _svData.GetAllSV();
         }
-        public List<MonHoc> GetAllMH()
-        {
-            return _svData.GetAllMH();
+        //Lấy thông tin Sinh Viên
+        public void GetInfo(SinhVien sv)
+        {           
+            Console.Write($"\tMSSV: {sv.MaSV}" + Environment.NewLine +
+                $"\tHọ tên: {sv.TenSV}" + Environment.NewLine +
+                $"\tGiới tính: {sv.GioiTinh}" + Environment.NewLine +
+                $"\tNgày sinh: {sv.NgaySinh.ToShortDateString()}" + Environment.NewLine +
+                $"\tLớp: {sv.Lop}" + Environment.NewLine +
+                $"\tKhóa: {sv.Khoa}" + Environment.NewLine
+                );
         }
     }
 }

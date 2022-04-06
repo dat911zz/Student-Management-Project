@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace StudentManagement.Interface.IData
 {
-    public interface ISinhVienData
+    public interface IMonHocData
     {
-        List<SinhVien> GetAllSV();
-        void Add(SinhVien sv);      
+        List<MonHoc> GetAllMH();
+        void Add(SinhVien sv);
     }
 }
