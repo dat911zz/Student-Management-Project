@@ -21,12 +21,13 @@ namespace StudentManagement.View
         public SearchForm()
         {
             InitializeComponent();
+            this.CenterToScreen();
         }
         
         private void SearchForm_Load(object sender, EventArgs e)
         {
-            TextBoxWriter writer = new TextBoxWriter(txtConsole);
-            Console.SetOut(writer);          
+            TextBoxWriter writer = new TextBoxWriter(txtConsole_SF);
+            Console.SetOut(writer);         
         }
 
 
@@ -68,25 +69,31 @@ namespace StudentManagement.View
             maSV_SearchBox.DisplayMember = "MaSV";
             maSV_SearchBox.ValueMember = "MaSV";
         }
-
+        private void SearchBox_Text_Form()
+        {
+            maSV_SearchBox.Text = "--Chọn mã SV--";
+            tenSV_SearchBox.Text = "--Chọn tên SV--";
+        }
         private void maSV_SearchBox_Click(object sender, EventArgs e)
         {
-            UploadData_MaSV_Box();           
+            UploadData_MaSV_Box();
+            SearchBox_Text_Form();
         }
 
         private void tenSV_SearchBox_Click(object sender, EventArgs e)
         {
             UploadData_TenSV_Box();
+            SearchBox_Text_Form();
         }
 
         private void searchBtn_Click(object sender, EventArgs e)
         {
-            txtConsole.Clear();
-            txtConsole.Refresh();
+            txtConsole_SF.Clear();
+            txtConsole_SF.Refresh();
             SinhVienService svs = new SinhVienService(new SQL());
-            
+            MonHocService mhs = new MonHocService(new SQL());
             List<SinhVien> list_sv = svs.GetAll();
-            //List<MonHoc> list_mh = svs.GetAllMH();
+            List<MonHoc> list_mh = mhs.GetAll();
             switch (chooseFuncBox.SelectedIndex)
             {
                 case 0:
@@ -95,7 +102,7 @@ namespace StudentManagement.View
                         {
                             if (item.MaSV == maSV_SearchBox.Text)
                             {
-                                txtConsole.AppendText(Environment.NewLine + Environment.NewLine);
+                                txtConsole_SF.AppendText(Environment.NewLine + Environment.NewLine);
                                 svs.GetInfo(item);
                             }
                         }
@@ -103,7 +110,11 @@ namespace StudentManagement.View
                     }
                 case 1:
                     {
-                        
+                        foreach (var item in list_mh)
+                        {
+                            txtConsole_SF.AppendText(Environment.NewLine + Environment.NewLine);
+                            mhs.GetInfo(item);
+                        }
 
                         break;
                     }
@@ -119,11 +130,6 @@ namespace StudentManagement.View
             }
 
 
-        }
-
-        private void chooseFuncBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
         }
     }
 }

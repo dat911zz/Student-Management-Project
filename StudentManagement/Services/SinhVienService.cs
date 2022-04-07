@@ -35,5 +35,10 @@ namespace StudentManagement.Services
                 $"\tKhóa: {sv.Khoa}" + Environment.NewLine
                 );
         }
+        //Auto DKHP cho Sinh Viên
+        public void AutoImportCTHP(SinhVien sv, string tenMH, int soTiet, double diemQT, double diemTP)
+        {
+            sv.CTHP.DSMH.Add(new KetQua(new MonHoc(tenMH, soTiet), new Diem(diemQT, diemTP)));
+        }
     }
 }

@@ -12,7 +12,7 @@ namespace StudentManagement.Data.Database
     /// <summary>
     /// Interacting with SQL Databse 
     /// </summary>
-    public class SQL : ISinhVienData
+    public class SQL : ISinhVienData, IMonHocData
     {
         //---log test server name : DESKTOP-GUE0JS7
         SqlCommand cmd;

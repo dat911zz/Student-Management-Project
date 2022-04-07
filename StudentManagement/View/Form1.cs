@@ -17,9 +17,10 @@ namespace StudentManagement
     public partial class Form1 : Form
     {
         SinhVienService service_sv = new SinhVienService(new SQL());
-        //MonHocService service_mh = new MonHocService();
+        MonHocService service_mh = new MonHocService(new SQL());
         public List<SinhVien> list_sv;
         public List<MonHoc> list_mh;
+        //bool flag = false;
 
         public Form1()
         {
@@ -29,14 +30,16 @@ namespace StudentManagement
         private void Form1_Load(object sender, EventArgs e)
         {
             TextBoxWriter writer = new TextBoxWriter(txtConsole);
-            Console.SetOut(writer);            
+            Console.SetOut(writer);
+            this.CenterToScreen();          
         }
 
         private void GetDataBtn_Click(object sender, EventArgs e)
         {
+            txtConsole.Clear();
             DGVController dgvc = new DGVController();
             list_sv = service_sv.GetAll();
-            //list_mh = service_sv.GetAll();
+            list_mh = service_mh.GetAll();
             dgvc.BindDataGridView(dataGridView1);
             Console.WriteLine("Get data successfully!");
         }
@@ -44,12 +47,24 @@ namespace StudentManagement
         private void SearchBtn_Click(object sender, EventArgs e)
         {
             SearchForm search = new SearchForm();
+            FormCollection fc = Application.OpenForms;
+
+            foreach (Form frm in fc)
+            {
+                //iterate through
+                if (frm.Name == "SearchForm")
+                {
+                    return;
+                }
+            }
+            
             search.Show();
+
         }
 
         private void InputScoreBtn_Click(object sender, EventArgs e)
         {
-
+            Console.WriteLine("Ét ô ét");
         }
     }
 }

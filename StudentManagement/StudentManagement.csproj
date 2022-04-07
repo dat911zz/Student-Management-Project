@@ -63,6 +63,7 @@
     <Compile Include="Services\DiemService.cs" />
     <Compile Include="Services\MonHocService.cs" />
     <Compile Include="Services\SinhVienService.cs" />
+    <Compile Include="Utilites\Manager.cs" />
     <Compile Include="View\DataGridViewController.cs" />
     <Compile Include="View\Form1.cs">
       <SubType>Form</SubType>

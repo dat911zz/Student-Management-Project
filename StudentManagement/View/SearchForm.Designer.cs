@@ -38,7 +38,7 @@ namespace StudentManagement.View
             this.label1 = new System.Windows.Forms.Label();
             this.chooseFuncBox = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txtConsole = new System.Windows.Forms.TextBox();
+            this.txtConsole_SF = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -81,7 +81,6 @@ namespace StudentManagement.View
             // maSV_SearchBox
             // 
             this.maSV_SearchBox.DisplayMember = "MaSV";
-            this.maSV_SearchBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.maSV_SearchBox.FormattingEnabled = true;
             this.maSV_SearchBox.Location = new System.Drawing.Point(154, 68);
             this.maSV_SearchBox.Name = "maSV_SearchBox";
@@ -94,7 +93,6 @@ namespace StudentManagement.View
             // tenSV_SearchBox
             // 
             this.tenSV_SearchBox.DisplayMember = "TenSV";
-            this.tenSV_SearchBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.tenSV_SearchBox.FormattingEnabled = true;
             this.tenSV_SearchBox.Location = new System.Drawing.Point(430, 68);
             this.tenSV_SearchBox.Name = "tenSV_SearchBox";
@@ -134,35 +132,34 @@ namespace StudentManagement.View
             this.chooseFuncBox.Name = "chooseFuncBox";
             this.chooseFuncBox.Size = new System.Drawing.Size(353, 24);
             this.chooseFuncBox.TabIndex = 0;
-            this.chooseFuncBox.SelectedIndexChanged += new System.EventHandler(this.chooseFuncBox_SelectedIndexChanged);
             // 
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.txtConsole);
+            this.panel2.Controls.Add(this.txtConsole_SF);
             this.panel2.Location = new System.Drawing.Point(12, 210);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(776, 228);
             this.panel2.TabIndex = 1;
             // 
-            // txtConsole
+            // txtConsole_SF
             // 
-            this.txtConsole.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txtConsole_SF.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtConsole.BackColor = System.Drawing.SystemColors.Control;
-            this.txtConsole.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtConsole.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConsole.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtConsole.Location = new System.Drawing.Point(-1, -2);
-            this.txtConsole.Margin = new System.Windows.Forms.Padding(4);
-            this.txtConsole.Multiline = true;
-            this.txtConsole.Name = "txtConsole";
-            this.txtConsole.ReadOnly = true;
-            this.txtConsole.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtConsole.Size = new System.Drawing.Size(775, 228);
-            this.txtConsole.TabIndex = 24;
-            this.txtConsole.WordWrap = false;
+            this.txtConsole_SF.BackColor = System.Drawing.SystemColors.Control;
+            this.txtConsole_SF.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtConsole_SF.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtConsole_SF.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtConsole_SF.Location = new System.Drawing.Point(-1, -2);
+            this.txtConsole_SF.Margin = new System.Windows.Forms.Padding(4);
+            this.txtConsole_SF.Multiline = true;
+            this.txtConsole_SF.Name = "txtConsole_SF";
+            this.txtConsole_SF.ReadOnly = true;
+            this.txtConsole_SF.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txtConsole_SF.Size = new System.Drawing.Size(775, 228);
+            this.txtConsole_SF.TabIndex = 24;
+            this.txtConsole_SF.WordWrap = false;
             // 
             // label2
             // 
@@ -183,6 +180,7 @@ namespace StudentManagement.View
             this.Controls.Add(this.panel1);
             this.Name = "SearchForm";
             this.Text = "Search Form";
+            this.Activated += new System.EventHandler(this.SearchForm_Load);
             this.Load += new System.EventHandler(this.SearchForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -197,7 +195,7 @@ namespace StudentManagement.View
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox txtConsole;
+        private System.Windows.Forms.TextBox txtConsole_SF;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox chooseFuncBox;
         private System.Windows.Forms.Label label2;
