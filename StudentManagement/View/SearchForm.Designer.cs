@@ -80,6 +80,8 @@ namespace StudentManagement.View
             // 
             // maSV_SearchBox
             // 
+            this.maSV_SearchBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.maSV_SearchBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.maSV_SearchBox.DisplayMember = "MaSV";
             this.maSV_SearchBox.FormattingEnabled = true;
             this.maSV_SearchBox.Location = new System.Drawing.Point(154, 68);
@@ -92,6 +94,8 @@ namespace StudentManagement.View
             // 
             // tenSV_SearchBox
             // 
+            this.tenSV_SearchBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.tenSV_SearchBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.tenSV_SearchBox.DisplayMember = "TenSV";
             this.tenSV_SearchBox.FormattingEnabled = true;
             this.tenSV_SearchBox.Location = new System.Drawing.Point(430, 68);

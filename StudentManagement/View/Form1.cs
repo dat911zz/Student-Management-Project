@@ -1,6 +1,7 @@
 ﻿using StudentManagement.Data.Database;
 using StudentManagement.Models;
 using StudentManagement.Services;
+using StudentManagement.Utilites;
 using StudentManagement.View;
 using System;
 using System.Collections.Generic;
@@ -38,15 +39,22 @@ namespace StudentManagement
         {
             txtConsole.Clear();
             DGVController dgvc = new DGVController();
+            Manager mng = new Manager();
             list_sv = service_sv.GetAll();
             list_mh = service_mh.GetAll();
+
+
+
+            mng.AutoWork(ref list_sv, list_mh);
+            
+
             dgvc.BindDataGridView(dataGridView1);
             Console.WriteLine("Get data successfully!");
         }
 
         private void SearchBtn_Click(object sender, EventArgs e)
         {
-            SearchForm search = new SearchForm();
+            SearchForm search = new SearchForm(list_sv);
             FormCollection fc = Application.OpenForms;
 
             foreach (Form frm in fc)

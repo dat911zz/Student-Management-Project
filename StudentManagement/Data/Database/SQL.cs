@@ -123,9 +123,37 @@ namespace StudentManagement.Data.Database
             conn.Close();
             return list;
         }
-        public List<Diem> GetAllDiem()
+        
+        public void AutoImportMonHocForAllList(ref List<SinhVien> list_sv, List<MonHoc> list_mh)
         {
-            throw new NotImplementedException();
+            List<MonHoc> list = new List<MonHoc>();
+            SqlConnection conn = GetConnection();
+            conn.Open();
+            cmd = new SqlCommand("SELECT * FROM DKHP", conn);
+            using (DbDataReader reader = cmd.ExecuteReader())
+            {
+                int i = 0;
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        List<MonHoc> tmp = new List<MonHoc>(list_mh.ToArray());
+                        //-------------INPUT DATA----------------
+                        for (int mh_i = 0; mh_i < reader.FieldCount; mh_i++)
+                        {
+                            if (reader.GetInt32(mh_i) == 1)
+                            {
+                                //========Deep copy========= 
+                                MonHoc c = new MonHoc(tmp[mh_i]);
+                                //list_sv[i].MHDK.Add((MonHoc)c);
+                                list_sv[i].CTHP.DSMH.Add(new KetQua(new MonHoc(c), new Diem()));
+                            }
+                        }
+                        i++;
+                    }
+                }
+                Console.WriteLine();
+            }
         }
         public void Add(SinhVien sv)
         {

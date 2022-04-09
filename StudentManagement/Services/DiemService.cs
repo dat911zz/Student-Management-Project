@@ -32,6 +32,12 @@ namespace StudentManagement.Services
         {
             return diemTongKet(d) >= 4;
         }
-
+        //Lấy thông tin điểm
+        public virtual void GetInfo(Diem d)
+        {
+            Console.Write($"\tĐiểm thành phần: {d.diemTP}" + Environment.NewLine +
+                $"\tĐiểm qua trình: {d.diemQT}" + Environment.NewLine
+                );
+        }
     }
 }

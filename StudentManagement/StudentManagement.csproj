@@ -61,6 +61,7 @@
     <Compile Include="Models\KetQua.cs" />
     <Compile Include="Services\CTHocPhanService.cs" />
     <Compile Include="Services\DiemService.cs" />
+    <Compile Include="Services\KetQuaService.cs" />
     <Compile Include="Services\MonHocService.cs" />
     <Compile Include="Services\SinhVienService.cs" />
     <Compile Include="Utilites\Manager.cs" />

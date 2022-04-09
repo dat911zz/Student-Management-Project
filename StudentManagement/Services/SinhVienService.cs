@@ -38,7 +38,12 @@ namespace StudentManagement.Services
         //Auto DKHP cho Sinh Viên
         public void AutoImportCTHP(SinhVien sv, string tenMH, int soTiet, double diemQT, double diemTP)
         {
+            KetQuaService kqs = new KetQuaService();
             sv.CTHP.DSMH.Add(new KetQua(new MonHoc(tenMH, soTiet), new Diem(diemQT, diemTP)));
+            foreach (var item in sv.CTHP.DSMH)
+            {
+                kqs.GetInfoAll(item);
+            }
         }
     }
 }
