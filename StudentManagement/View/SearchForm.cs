@@ -18,44 +18,21 @@ namespace StudentManagement.View
     public partial class SearchForm : Form
     {
         SqlConnection conn = new SqlConnection(new SQL().GetConnection("", "SinhVien", "test01", "1234").ConnectionString);
-        List<SinhVien> list_sv { get; set; }
-        List<MonHoc> list_mh { get; set; }
+        SearchBoxController boxC = new SearchBoxController();
+        List<SinhVien> list_sv { get; set; }      
 
         public SearchForm(List<SinhVien> list_sv)
         {
             InitializeComponent();
             this.CenterToScreen();
             this.list_sv = list_sv;
-        }
-        
+        }     
         private void SearchForm_Load(object sender, EventArgs e)
         {
             TextBoxWriter writer = new TextBoxWriter(txtConsole_SF);
             Console.SetOut(writer);
-            SearchBox_Text_Form();
+            boxC.SearchBox_Text_Form(maSV_SearchBox, tenSV_SearchBox);
         }
-
-
-
-        private void UploadData_MaSV_Box()
-        {
-            SqlDataAdapter da = new SqlDataAdapter("SELECT MaSV FROM SinhVien", conn);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            maSV_SearchBox.DataSource = dt;
-            maSV_SearchBox.DisplayMember = "MaSV";
-            maSV_SearchBox.ValueMember = "MaSV";
-        }
-        private void UploadData_TenSV_Box()
-        {
-            SqlDataAdapter da = new SqlDataAdapter("SELECT TenSV FROM SinhVien", conn);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            tenSV_SearchBox.DataSource = dt;
-            tenSV_SearchBox.DisplayMember = "TenSV";
-            tenSV_SearchBox.ValueMember = "TenSV";
-        }
-
         private void maSV_SearchBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             SqlDataAdapter da = new SqlDataAdapter($"SELECT TenSV FROM SinhVien WHERE MaSV = '{maSV_SearchBox.SelectedValue}'", conn);
@@ -73,35 +50,26 @@ namespace StudentManagement.View
             maSV_SearchBox.DataSource = dt;
             maSV_SearchBox.DisplayMember = "MaSV";
             maSV_SearchBox.ValueMember = "MaSV";
-        }
-        private void SearchBox_Text_Form()
-        {
-            maSV_SearchBox.Text = "--Chọn mã SV--";
-            tenSV_SearchBox.Text = "--Chọn tên SV--";
-        }
+        }      
         private void maSV_SearchBox_Click(object sender, EventArgs e)
         {
-            UploadData_MaSV_Box();
-            //SearchBox_Text_Form();
+            boxC.UploadData_MaSV_Box(maSV_SearchBox, conn);
             maSV_SearchBox.Text = "";
             tenSV_SearchBox.Text = "--Chọn tên SV--";
         }
-
         private void tenSV_SearchBox_Click(object sender, EventArgs e)
         {
-            UploadData_TenSV_Box();
+            boxC.UploadData_TenSV_Box(tenSV_SearchBox, conn);
             maSV_SearchBox.Text = "--Chọn mã SV--";
             tenSV_SearchBox.Text = "";
         }
-
         private void searchBtn_Click(object sender, EventArgs e)
         {
             txtConsole_SF.Clear();
             txtConsole_SF.Refresh();
             SinhVienService svs = new SinhVienService(new SQL());
             MonHocService mhs = new MonHocService(new SQL());
-            //List<SinhVien> list_sv = svs.GetAll();
-            //List<MonHoc> list_mh = mhs.GetAll();
+
             if (list_sv == null)
             {
                 MessageBox.Show("Chưa tải dữ liệu lên hệ thống!", "Hệ Thống", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -112,7 +80,6 @@ namespace StudentManagement.View
             {
                 case 0:
                     {
-
                         //--Chọn mã SV--
                         if (maSV_SearchBox.Text == "--Chọn mã SV--" || tenSV_SearchBox.Text == "--Chọn tên SV--")
                         {
@@ -191,8 +158,6 @@ namespace StudentManagement.View
                     MessageBox.Show("Vui lòng chọn chức năng trước!", "Hệ Thống", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
             }
-
-
         }
     }
 }
