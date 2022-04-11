@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StudentManagement.Models;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -28,6 +29,12 @@ namespace StudentManagement.View
             box.DataSource = dt;
             box.DisplayMember = "TenSV";
             box.ValueMember = "TenSV";
+        }
+        public void UploadData_CTHP_MonHoc_Box(ComboBox box, List<MonHoc> lmh)
+        {
+            DataTable dt = new DataTable();
+            DataSet ds = new DataSet();
+            
         }
         public void SearchBox_Text_Form(ComboBox boxMa, ComboBox boxTen)
         {

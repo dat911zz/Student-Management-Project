@@ -83,7 +83,7 @@ namespace StudentManagement.View
                         //--Chọn mã SV--
                         if (maSV_SearchBox.Text == "--Chọn mã SV--" || tenSV_SearchBox.Text == "--Chọn tên SV--")
                         {
-                            MessageBox.Show("Không tìm thấy kết quả!", "Hệ Thống", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            ShowMessageNotFound();
                         }
                         txtConsole_SF.BringToFront();
                         foreach (var item in list_sv)
@@ -97,7 +97,7 @@ namespace StudentManagement.View
                         break;
                     }
                 case 1:
-                    {                       
+                    {
                         Manager mng = new Manager();
                         DataTable table = new DataTable();
                         DataGridView grid = new DataGridView();
@@ -112,10 +112,12 @@ namespace StudentManagement.View
                                 grid.Width = 700;
                                 grid.Height = 200;
                                 grid.DataSource = mng.UploadMonHocSVIntoDGV(item);
+                                grid.Columns[0].Width = 50;//Chỉnh độ rộng của cột STT
+                                grid.Columns[2].Width = 50;//Chỉnh độ rộng cột số tiết
                                 return;
                             }
                         }
-                        MessageBox.Show("Không tìm thấy kết quả!", "Hệ Thống", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        ShowMessageNotFound();
                         break;
                     }
                 case 2:
@@ -134,7 +136,6 @@ namespace StudentManagement.View
                                 grid.Width = 700;
                                 grid.Height = 200;
                                 grid.DataSource = mng.UploadDiemSVIntoDGV(item);
-                                grid.Refresh();
 
                                 for (int i = 0; i < item.CTHP.DSMH.Count; i++)
                                 {
@@ -148,16 +149,23 @@ namespace StudentManagement.View
                                     }
                                     
                                 }
+
+                                grid.Columns[0].Width = 50;//Chỉnh độ rộng của cột STT
+                                grid.Columns[2].Width = 50;//Chỉnh độ rộng cột số tiết
                                 return;
                             }
                         }
-                        MessageBox.Show("Không tìm thấy kết quả!", "Hệ Thống", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        ShowMessageNotFound();
                         break;
                     }
                 default:
                     MessageBox.Show("Vui lòng chọn chức năng trước!", "Hệ Thống", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
             }
+        }
+        public void ShowMessageNotFound()
+        {
+            MessageBox.Show("Không tìm thấy kết quả!", "Hệ Thống", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

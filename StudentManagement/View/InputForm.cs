@@ -1,5 +1,6 @@
 ﻿using StudentManagement.Data.Database;
 using StudentManagement.Models;
+using StudentManagement.Services;
 using StudentManagement.Utilites;
 using System;
 using System.Collections.Generic;
@@ -79,13 +80,68 @@ namespace StudentManagement.View
         }
         private void InputBtn_Click(object sender, EventArgs e)
         {
+            //Checking exceptions
             if (list_sv == null)
             {
                 MessageBox.Show("Chưa tải dữ liệu lên hệ thống!", "Hệ Thống", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.Close();
                 return;
             }
+            if (diemQTBox.Value > 10 || diemTPBox.Value > 10)
+            {
+                MessageBox.Show("Điểm nhập vô không hợp lệ!", "Hệ Thống", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            DialogResult result = MessageBox.Show($"Bạn có muốn nhập điểm vào môn {MonHocBox.Text} chứ?", "Hệ Thống", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.No)
+            {
+                return;
+            }
+            //Doing func
+            list_sv.ForEach(x =>
+            {
+                if (x.MaSV == maSV_SearchBox.Text)
+                {
+                    x.CTHP.DSMH.ForEach(y =>
+                    {
+                        if (y.CTMH.tenMH == MonHocBox.Text)
+                        {
+                            DiemService ds = new DiemService();
+                            ds.setDiem(y.CTDiem, double.Parse(diemQTBox.Value.ToString()), double.Parse(diemTPBox.Value.ToString()));
+                        }
+                    });
+                    BindDataToDGV();
+                    ResultPanel.Refresh();
+                    return;
+                }
+            });
+        }
 
+        private void searchBtn_Click(object sender, EventArgs e)
+        {
+            if (list_sv == null)
+            {
+                MessageBox.Show("Chưa tải dữ liệu lên hệ thống!", "Hệ Thống", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+                return;
+            }
+            BindDataToDGV();           
+        }
+        private void FillMonHocBox()
+        {
+            try
+            {
+                DataTable dtDataFromDB = GetDataFromDatabaseinDataTable();
+                MonHocBox.DataSource = dtDataFromDB;
+                MonHocBox.ValueMember = "Tên MH";
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message);
+            }
+        }
+        public void BindDataToDGV()
+        {
             Manager mng = new Manager();
             DataTable table = new DataTable();
             DataGridView grid = new DataGridView();
@@ -95,12 +151,11 @@ namespace StudentManagement.View
                 if (item.TenSV == tenSV_SearchBox.Text)
                 {
                     //Create cols and fill data in DGV
-                    panel2.Controls.Add(grid);
+                    ResultPanel.Controls.Add(grid);
                     grid.BringToFront();
                     grid.Width = 700;
                     grid.Height = 200;
                     grid.DataSource = mng.UploadDiemSVIntoDGV(item);
-                    grid.Refresh();
 
                     for (int i = 0; i < item.CTHP.DSMH.Count; i++)
                     {
@@ -112,17 +167,34 @@ namespace StudentManagement.View
                         {
                             grid.Rows[i].Cells[4].Style.BackColor = Color.Red;
                         }
-
                     }
+
+                    grid.Columns[0].Width = 50;//Chỉnh độ rộng của cột STT
+                    grid.Columns[2].Width = 50;//Chỉnh độ rộng cột số tiết
+                    MonHocBox.Enabled = true;
+                    FillMonHocBox();
                     return;
                 }
             }
             MessageBox.Show("Không tìm thấy kết quả!", "Hệ Thống", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
-
-        private void searchBtn_Click(object sender, EventArgs e)
+        public DataTable GetDataFromDatabaseinDataTable()
         {
+            Manager mng = new Manager();
+            DataTable dt = new DataTable();
+            foreach (var item in list_sv)
+            {
+                if (item.TenSV == tenSV_SearchBox.Text)
+                {
+                    return mng.UploadMonHocSVIntoDGV(item);
+                }
+            }
+            return null;
+        }
 
+        private void InputForm_Load(object sender, EventArgs e)
+        {
+            MonHocBox.Enabled = false;
         }
     }
 }

@@ -49,6 +49,7 @@ namespace StudentManagement
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.txtConsole = new System.Windows.Forms.TextBox();
+            this.exportFileBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -79,6 +80,7 @@ namespace StudentManagement
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.GrayText;
+            this.panel2.Controls.Add(this.exportFileBtn);
             this.panel2.Controls.Add(this.InputScoreBtn);
             this.panel2.Controls.Add(this.SearchBtn);
             this.panel2.Controls.Add(this.GetDataBtn);
@@ -252,6 +254,16 @@ namespace StudentManagement
             this.txtConsole.TabIndex = 23;
             this.txtConsole.WordWrap = false;
             // 
+            // exportFileBtn
+            // 
+            this.exportFileBtn.Location = new System.Drawing.Point(39, 276);
+            this.exportFileBtn.Name = "exportFileBtn";
+            this.exportFileBtn.Size = new System.Drawing.Size(110, 49);
+            this.exportFileBtn.TabIndex = 4;
+            this.exportFileBtn.Text = "Xuất file";
+            this.exportFileBtn.UseVisualStyleBackColor = true;
+            this.exportFileBtn.Click += new System.EventHandler(this.exportFileBtn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -302,6 +314,7 @@ namespace StudentManagement
         private System.Windows.Forms.DataGridViewTextBoxColumn NgaySinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn Lop;
         private System.Windows.Forms.DataGridViewTextBoxColumn Khoa;
+        private System.Windows.Forms.Button exportFileBtn;
     }
 }
 

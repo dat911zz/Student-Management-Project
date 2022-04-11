@@ -11,7 +11,7 @@ using StudentManagement.Interface.IData;
 namespace StudentManagement.Data.Database
 {
     //Class for XML Databse (for future)
-    public class XML : ISinhVienData
+    public class XML : ISinhVienData, IMonHocData
     {
         public void Add(SinhVien sv)
         {

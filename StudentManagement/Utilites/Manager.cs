@@ -12,6 +12,7 @@ namespace StudentManagement.Utilites
 {
     public class Manager
     {
+
         public void AutoWork(ref List<SinhVien> list_sv, List<MonHoc> list_mh)
         {
             AutoDKHP(ref list_sv, list_mh);
@@ -43,8 +44,7 @@ namespace StudentManagement.Utilites
             {
                 Console.WriteLine($"- Sinh Viên {item.TenSV}");
                 for (int i = 0; i < item.CTHP.DSMH.Count; i++)
-                {
-                    
+                {                   
                     Console.WriteLine();
                 }
             }
@@ -60,7 +60,6 @@ namespace StudentManagement.Utilites
                     kqs.GetInfoAll(x.CTHP.DSMH[i++]);
                 }
             });
-            //GetInfoForm(list_sv, () => kqs.GetInfoAll(item.CTHP.DSMH[i++]);)
         }
         public void GetAllMonHoc_SV(List<SinhVien> list_sv)
         {
@@ -83,7 +82,7 @@ namespace StudentManagement.Utilites
 
             foreach (var item in sv.CTHP.DSMH)
             {
-                dt.Rows.Add(stt, item.CTMH.tenMH , item.CTMH.soTiet);
+                dt.Rows.Add(stt++, item.CTMH.tenMH , item.CTMH.soTiet);
 
             }
             return dt;
@@ -91,16 +90,18 @@ namespace StudentManagement.Utilites
         public DataTable UploadDiemSVIntoDGV(SinhVien sv)
         {
             int stt = 1;
+            DiemService ds = new DiemService();
             DataTable dt = new DataTable();
             dt.Columns.Add("STT", typeof(int));
             dt.Columns.Add("Tên MH", typeof(string));
             dt.Columns.Add("Số tiết", typeof(int));
             dt.Columns.Add("Điểm quá trình", typeof(int));
             dt.Columns.Add("Điểm thành phần", typeof(int));
+            dt.Columns.Add("Kết quả", typeof(string));
 
             foreach (var item in sv.CTHP.DSMH)
             {
-                dt.Rows.Add(stt, item.CTMH.tenMH, item.CTMH.soTiet, item.CTDiem.diemQT, item.CTDiem.diemTP);           
+                dt.Rows.Add(stt++, item.CTMH.tenMH, item.CTMH.soTiet, item.CTDiem.diemQT, item.CTDiem.diemTP, ds.isPass(item.CTDiem) == true ? "Đậu" : "Trượt");           
             }
             return dt;
         }
