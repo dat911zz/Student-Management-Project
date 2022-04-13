@@ -154,6 +154,7 @@ namespace StudentManagement.Data.Database
                 }
                 Console.WriteLine();
             }
+            conn.Close();
         }
         public void Add(SinhVien sv)
         {
