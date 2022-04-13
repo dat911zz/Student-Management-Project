@@ -1,4 +1,6 @@
-﻿using StudentManagement.Data.Database;
+﻿using Castle.Windsor;
+using StudentManagement.Data.Database;
+using StudentManagement.Installer;
 using StudentManagement.Models;
 using StudentManagement.Services;
 using System;
@@ -12,7 +14,13 @@ namespace StudentManagement.Utilites
 {
     public class Manager
     {
-
+        WindsorContainer container;
+        public Manager()
+        {
+            container = new WindsorContainer();
+            container.Install(new ServicesInstaller());
+            container.Dispose();
+        }
         public void AutoWork(ref List<SinhVien> list_sv, List<MonHoc> list_mh)
         {
             AutoDKHP(ref list_sv, list_mh);
@@ -27,7 +35,7 @@ namespace StudentManagement.Utilites
         {
             Random score1 = new Random();
             Random score2 = new Random();
-            DiemService ds = new DiemService();
+            DiemService ds = container.Resolve<DiemService>();
 
             for (int i = 0; i < list_sv.Count; i++)
             {
@@ -39,7 +47,7 @@ namespace StudentManagement.Utilites
         }
         public void GetInfoForm(List<SinhVien> list_sv)
         {
-            KetQuaService kqs = new KetQuaService();
+            KetQuaService kqs = container.Resolve<KetQuaService>();
             foreach (var item in list_sv)
             {
                 Console.WriteLine($"- Sinh Viên {item.TenSV}");
@@ -52,7 +60,7 @@ namespace StudentManagement.Utilites
 
         public void GetAllListInfo(List<SinhVien> list_sv)
         {
-            KetQuaService kqs = new KetQuaService();
+            KetQuaService kqs = container.Resolve<KetQuaService>();
             list_sv.ForEach(x => {
                 Console.WriteLine($"- Sinh Viên {x.TenSV}");
                 for (int i = 0; i < x.CTHP.DSMH.Count; i++)
@@ -63,7 +71,7 @@ namespace StudentManagement.Utilites
         }
         public void GetAllMonHoc_SV(List<SinhVien> list_sv)
         {
-            KetQuaService kqs = new KetQuaService();          
+            KetQuaService kqs = container.Resolve<KetQuaService>();          
             list_sv.ForEach(x => {
                 Console.WriteLine($"- Sinh Viên {x.TenSV}");
                 for (int i = 0; i < x.CTHP.DSMH.Count; i++)
@@ -90,7 +98,7 @@ namespace StudentManagement.Utilites
         public DataTable UploadDiemSVIntoDGV(SinhVien sv)
         {
             int stt = 1;
-            DiemService ds = new DiemService();
+            DiemService ds = container.Resolve<DiemService>();
             DataTable dt = new DataTable();
             dt.Columns.Add("STT", typeof(int));
             dt.Columns.Add("Tên MH", typeof(string));

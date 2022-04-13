@@ -26,7 +26,6 @@ namespace StudentManagement.View
             this.CenterToScreen();
             this.list_sv = list_sv;
         }
-
         private void diemQTBox_ValueChanged(object sender, EventArgs e)
         {
             CheckExceptionOfDiem(diemQTBox, errorProvider1);
@@ -64,14 +63,12 @@ namespace StudentManagement.View
             maSV_SearchBox.DisplayMember = "MaSV";
             maSV_SearchBox.ValueMember = "MaSV";
         }
-
         private void maSV_SearchBox_Click(object sender, EventArgs e)
         {
             boxC.UploadData_MaSV_Box(maSV_SearchBox, conn);
             maSV_SearchBox.Text = "";
             tenSV_SearchBox.Text = "--Chọn tên SV--";
         }
-
         private void tenSV_SearchBox_Click(object sender, EventArgs e)
         {
             boxC.UploadData_TenSV_Box(tenSV_SearchBox, conn);
@@ -116,7 +113,6 @@ namespace StudentManagement.View
                 }
             });
         }
-
         private void searchBtn_Click(object sender, EventArgs e)
         {
             if (list_sv == null)
@@ -191,7 +187,6 @@ namespace StudentManagement.View
             }
             return null;
         }
-
         private void InputForm_Load(object sender, EventArgs e)
         {
             MonHocBox.Enabled = false;

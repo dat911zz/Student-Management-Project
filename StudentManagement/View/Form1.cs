@@ -16,31 +16,6 @@ namespace StudentManagement
 {
     public partial class Form1 : Form
     {
-        //Console.Write("1. Lay data tu CSDL");
-        //    Console.SetCursorPosition(35, y++);
-
-        //    Console.Write("2. Xuat danh sach sinh vien");
-        //    Console.SetCursorPosition(35, y++);
-
-        //    Console.Write("3. Xuat thong tin sinh vien");
-        //    Console.SetCursorPosition(35, y++);
-
-        //    Console.Write("4. Xem so mon hoc");
-        //    Console.SetCursorPosition(35, y++);
-
-        //    Console.Write("5. Xem so diem mon hoc");
-        //    Console.SetCursorPosition(35, y++);
-
-        //    Console.Write("6. Nhap diem sinh vien");
-        //    Console.SetCursorPosition(35, y++);
-
-        //    Console.Write("7. Xem ket qua hoc tap");
-        //    Console.SetCursorPosition(42, y++);
-        //==================================================
-
-
-
-
         //Áp dụng DI
         //SinhVienService service_sv = new SinhVienService(new SQL());
         //MonHocService service_mh = new MonHocService(new SQL());
@@ -83,11 +58,7 @@ namespace StudentManagement
             list_sv = service_sv.GetAll();
             list_mh = service_mh.GetAll();
 
-
-
-            mng.AutoWork(ref list_sv, list_mh);
-            
-
+            mng.AutoWork(ref list_sv, list_mh);          
             dgvc.BindDataGridView(dataGridView1);
             Console.WriteLine("Get data successfully!");
         }

@@ -19,17 +19,8 @@ namespace StudentManagement.Installer
         {
             container.Register(
                 Component
-                    .For<SinhVien>()
-                    .LifestyleTransient());
-            container.Register(
-                Component
-                    .For<MonHoc>()
-                    .LifestyleTransient());
-            container.Register(
-                Component
                     .For<Manager>()
                     .LifestyleTransient());
-
             container.Register(
                 Component
                     .For<IMonHocData, ISinhVienData>()
@@ -50,6 +41,15 @@ namespace StudentManagement.Installer
                     .For<IMonHocService>()
                     .ImplementedBy<MonHocService>()
                     .LifestyleTransient());
+            container.Register(
+                Component
+                    .For<DiemService>()
+                    .LifestyleTransient());
+            container.Register(
+                Component
+                    .For<KetQuaService>()
+                    .LifestyleTransient());
+
         }
     }
 }
