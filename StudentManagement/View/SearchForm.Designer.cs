@@ -54,16 +54,19 @@ namespace StudentManagement.View
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.chooseFuncBox);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Location = new System.Drawing.Point(14, 14);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(776, 163);
+            this.panel1.Size = new System.Drawing.Size(873, 193);
             this.panel1.TabIndex = 0;
             // 
             // searchBtn
             // 
-            this.searchBtn.Location = new System.Drawing.Point(327, 113);
+            this.searchBtn.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchBtn.Location = new System.Drawing.Point(368, 134);
+            this.searchBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.searchBtn.Name = "searchBtn";
-            this.searchBtn.Size = new System.Drawing.Size(121, 36);
+            this.searchBtn.Size = new System.Drawing.Size(136, 43);
             this.searchBtn.TabIndex = 10;
             this.searchBtn.Text = "Tìm";
             this.searchBtn.UseVisualStyleBackColor = true;
@@ -72,9 +75,10 @@ namespace StudentManagement.View
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(151, 48);
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(170, 57);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(87, 17);
+            this.label4.Size = new System.Drawing.Size(95, 19);
             this.label4.TabIndex = 9;
             this.label4.Text = "Mã sinh viên";
             // 
@@ -84,9 +88,10 @@ namespace StudentManagement.View
             this.maSV_SearchBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.maSV_SearchBox.DisplayMember = "MaSV";
             this.maSV_SearchBox.FormattingEnabled = true;
-            this.maSV_SearchBox.Location = new System.Drawing.Point(154, 68);
+            this.maSV_SearchBox.Location = new System.Drawing.Point(173, 81);
+            this.maSV_SearchBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.maSV_SearchBox.Name = "maSV_SearchBox";
-            this.maSV_SearchBox.Size = new System.Drawing.Size(195, 24);
+            this.maSV_SearchBox.Size = new System.Drawing.Size(219, 27);
             this.maSV_SearchBox.TabIndex = 8;
             this.maSV_SearchBox.ValueMember = "MaSV";
             this.maSV_SearchBox.SelectedIndexChanged += new System.EventHandler(this.maSV_SearchBox_SelectedIndexChanged);
@@ -98,9 +103,10 @@ namespace StudentManagement.View
             this.tenSV_SearchBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.tenSV_SearchBox.DisplayMember = "TenSV";
             this.tenSV_SearchBox.FormattingEnabled = true;
-            this.tenSV_SearchBox.Location = new System.Drawing.Point(430, 68);
+            this.tenSV_SearchBox.Location = new System.Drawing.Point(484, 81);
+            this.tenSV_SearchBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tenSV_SearchBox.Name = "tenSV_SearchBox";
-            this.tenSV_SearchBox.Size = new System.Drawing.Size(195, 24);
+            this.tenSV_SearchBox.Size = new System.Drawing.Size(219, 27);
             this.tenSV_SearchBox.TabIndex = 6;
             this.tenSV_SearchBox.ValueMember = "TenSV";
             this.tenSV_SearchBox.SelectedIndexChanged += new System.EventHandler(this.tenSV_SearchBox_SelectedIndexChanged);
@@ -109,18 +115,20 @@ namespace StudentManagement.View
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(427, 48);
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(480, 57);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(93, 17);
+            this.label3.Size = new System.Drawing.Size(98, 19);
             this.label3.TabIndex = 7;
             this.label3.Text = "Tên sinh viên";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(151, 12);
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(170, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 17);
+            this.label1.Size = new System.Drawing.Size(122, 19);
             this.label1.TabIndex = 1;
             this.label1.Text = "Chọn chức năng:";
             // 
@@ -132,18 +140,20 @@ namespace StudentManagement.View
             "Xem thông tin của sinh viên",
             "Xem số môn học của sinh viên",
             "Xem số điểm của sinh viên"});
-            this.chooseFuncBox.Location = new System.Drawing.Point(272, 9);
+            this.chooseFuncBox.Location = new System.Drawing.Point(306, 11);
+            this.chooseFuncBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.chooseFuncBox.Name = "chooseFuncBox";
-            this.chooseFuncBox.Size = new System.Drawing.Size(353, 24);
+            this.chooseFuncBox.Size = new System.Drawing.Size(397, 27);
             this.chooseFuncBox.TabIndex = 0;
             // 
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.txtConsole_SF);
-            this.panel2.Location = new System.Drawing.Point(12, 210);
+            this.panel2.Location = new System.Drawing.Point(14, 249);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(776, 228);
+            this.panel2.Size = new System.Drawing.Size(872, 270);
             this.panel2.TabIndex = 1;
             // 
             // txtConsole_SF
@@ -153,35 +163,38 @@ namespace StudentManagement.View
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtConsole_SF.BackColor = System.Drawing.SystemColors.Control;
             this.txtConsole_SF.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtConsole_SF.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtConsole_SF.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtConsole_SF.ForeColor = System.Drawing.SystemColors.ControlText;
             this.txtConsole_SF.Location = new System.Drawing.Point(-1, -2);
-            this.txtConsole_SF.Margin = new System.Windows.Forms.Padding(4);
+            this.txtConsole_SF.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtConsole_SF.Multiline = true;
             this.txtConsole_SF.Name = "txtConsole_SF";
             this.txtConsole_SF.ReadOnly = true;
             this.txtConsole_SF.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtConsole_SF.Size = new System.Drawing.Size(775, 228);
+            this.txtConsole_SF.Size = new System.Drawing.Size(872, 271);
             this.txtConsole_SF.TabIndex = 24;
             this.txtConsole_SF.WordWrap = false;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(20, 201);
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(22, 239);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 17);
+            this.label2.Size = new System.Drawing.Size(61, 19);
             this.label2.TabIndex = 2;
             this.label2.Text = "Kết quả";
             // 
             // SearchForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(900, 534);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "SearchForm";
             this.Text = "Search Form";
             this.Activated += new System.EventHandler(this.SearchForm_Load);

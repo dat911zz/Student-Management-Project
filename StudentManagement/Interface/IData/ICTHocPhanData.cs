@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace StudentManagement.Interface.IData
 {
-    public interface IMonHocData
+    public interface ICTHocPhanData
     {
-        List<MonHoc> GetAllMH();
-        void Add(MonHoc sv);
+        void GetAllCTHP(ref List<SinhVien> list_sv, List<MonHoc> list_mh);
+        void Add(CTHocPhan cthp);
     }
 }

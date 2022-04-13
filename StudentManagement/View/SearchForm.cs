@@ -12,18 +12,28 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using StudentManagement.Utilites;
+using Castle.Windsor;
+using StudentManagement.Installer;
+using StudentManagement.Interface.IServices;
 
 namespace StudentManagement.View
 {
     public partial class SearchForm : Form
     {
-        SqlConnection conn = new SqlConnection(new SQL().GetConnection("", "SinhVien", "test01", "1234").ConnectionString);
-        SearchBoxController boxC = new SearchBoxController();
-        List<SinhVien> list_sv { get; set; }      
+        public WindsorContainer container;
 
+        SqlConnection conn = new SqlConnection(new SQL().GetConnection("", "SinhVien", "test01", "1234").ConnectionString);
+        SearchBoxController boxC;
+        DGVController dgvC;
+        List<SinhVien> list_sv { get; set; }
         public SearchForm(List<SinhVien> list_sv)
         {
             InitializeComponent();
+            container = new WindsorContainer();
+            container.Install(new ServicesInstaller());
+            container.Dispose();
+            boxC = container.Resolve<SearchBoxController>();
+            dgvC = container.Resolve<DGVController>();
             this.CenterToScreen();
             this.list_sv = list_sv;
         }     
@@ -67,8 +77,8 @@ namespace StudentManagement.View
         {
             txtConsole_SF.Clear();
             txtConsole_SF.Refresh();
-            SinhVienService svs = new SinhVienService(new SQL());
-            MonHocService mhs = new MonHocService(new SQL());
+            ISinhVienService svs = container.Resolve<ISinhVienService>();
+            IMonHocService mhs = container.Resolve<IMonHocService>();
 
             if (list_sv == null)
             {
@@ -98,7 +108,7 @@ namespace StudentManagement.View
                     }
                 case 1:
                     {
-                        Manager mng = new Manager();
+                        Manager mng = container.Resolve<Manager>();
                         DataTable table = new DataTable();
                         DataGridView grid = new DataGridView();
 
@@ -122,7 +132,7 @@ namespace StudentManagement.View
                     }
                 case 2:
                     {
-                        Manager mng = new Manager();
+                        Manager mng = container.Resolve<Manager>();
                         DataTable table = new DataTable();
                         DataGridView grid = new DataGridView();
 
@@ -137,21 +147,7 @@ namespace StudentManagement.View
                                 grid.Height = 200;
                                 grid.DataSource = mng.UploadDiemSVIntoDGV(item);
 
-                                for (int i = 0; i < item.CTHP.DSMH.Count; i++)
-                                {
-                                    if (int.Parse(grid.Rows[i].Cells[3].Value.ToString()) < 5)
-                                    {
-                                        grid.Rows[i].Cells[3].Style.BackColor = Color.Red;
-                                    }
-                                    if (int.Parse(grid.Rows[i].Cells[4].Value.ToString()) < 5)
-                                    {
-                                        grid.Rows[i].Cells[4].Style.BackColor = Color.Red;
-                                    }
-                                    
-                                }
-
-                                grid.Columns[0].Width = 50;//Chỉnh độ rộng của cột STT
-                                grid.Columns[2].Width = 50;//Chỉnh độ rộng cột số tiết
+                                dgvC.ScoreCustoms(grid, item);
                                 return;
                             }
                         }

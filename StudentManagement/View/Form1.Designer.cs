@@ -32,6 +32,7 @@ namespace StudentManagement
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.exportFileBtn = new System.Windows.Forms.Button();
             this.InputScoreBtn = new System.Windows.Forms.Button();
             this.SearchBtn = new System.Windows.Forms.Button();
             this.GetDataBtn = new System.Windows.Forms.Button();
@@ -49,7 +50,6 @@ namespace StudentManagement
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.txtConsole = new System.Windows.Forms.TextBox();
-            this.exportFileBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -60,11 +60,11 @@ namespace StudentManagement
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Blue;
             this.label1.Location = new System.Drawing.Point(505, 11);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(226, 29);
+            this.label1.Size = new System.Drawing.Size(282, 36);
             this.label1.TabIndex = 0;
             this.label1.Text = "Quản Lý Sinh Viên";
             // 
@@ -87,11 +87,23 @@ namespace StudentManagement
             this.panel2.Controls.Add(this.panel5);
             this.panel2.Location = new System.Drawing.Point(12, 12);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(184, 559);
+            this.panel2.Size = new System.Drawing.Size(184, 662);
             this.panel2.TabIndex = 2;
+            // 
+            // exportFileBtn
+            // 
+            this.exportFileBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exportFileBtn.Location = new System.Drawing.Point(39, 276);
+            this.exportFileBtn.Name = "exportFileBtn";
+            this.exportFileBtn.Size = new System.Drawing.Size(110, 49);
+            this.exportFileBtn.TabIndex = 4;
+            this.exportFileBtn.Text = "Xuất file";
+            this.exportFileBtn.UseVisualStyleBackColor = true;
+            this.exportFileBtn.Click += new System.EventHandler(this.exportFileBtn_Click);
             // 
             // InputScoreBtn
             // 
+            this.InputScoreBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InputScoreBtn.Location = new System.Drawing.Point(39, 208);
             this.InputScoreBtn.Name = "InputScoreBtn";
             this.InputScoreBtn.Size = new System.Drawing.Size(110, 49);
@@ -102,6 +114,7 @@ namespace StudentManagement
             // 
             // SearchBtn
             // 
+            this.SearchBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SearchBtn.Location = new System.Drawing.Point(39, 141);
             this.SearchBtn.Name = "SearchBtn";
             this.SearchBtn.Size = new System.Drawing.Size(110, 49);
@@ -112,6 +125,7 @@ namespace StudentManagement
             // 
             // GetDataBtn
             // 
+            this.GetDataBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GetDataBtn.Location = new System.Drawing.Point(39, 72);
             this.GetDataBtn.Name = "GetDataBtn";
             this.GetDataBtn.Size = new System.Drawing.Size(110, 49);
@@ -124,6 +138,7 @@ namespace StudentManagement
             // 
             this.panel5.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.panel5.Controls.Add(this.label2);
+            this.panel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(184, 52);
@@ -134,7 +149,7 @@ namespace StudentManagement
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(66, 18);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(48, 17);
+            this.label2.Size = new System.Drawing.Size(53, 18);
             this.label2.TabIndex = 0;
             this.label2.Text = "MENU";
             // 
@@ -142,6 +157,7 @@ namespace StudentManagement
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel3.Controls.Add(this.dataGridView1);
+            this.panel3.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel3.Location = new System.Drawing.Point(202, 70);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1310, 303);
@@ -162,7 +178,7 @@ namespace StudentManagement
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1300, 298);
+            this.dataGridView1.Size = new System.Drawing.Size(1300, 293);
             this.dataGridView1.TabIndex = 0;
             // 
             // STT
@@ -241,28 +257,18 @@ namespace StudentManagement
             this.txtConsole.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtConsole.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtConsole.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConsole.ForeColor = System.Drawing.Color.Lime;
+            this.txtConsole.BackColor = System.Drawing.SystemColors.Control;
+            this.txtConsole.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtConsole.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtConsole.Location = new System.Drawing.Point(202, 578);
             this.txtConsole.Margin = new System.Windows.Forms.Padding(4);
             this.txtConsole.Multiline = true;
             this.txtConsole.Name = "txtConsole";
             this.txtConsole.ReadOnly = true;
             this.txtConsole.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtConsole.Size = new System.Drawing.Size(810, 100);
+            this.txtConsole.Size = new System.Drawing.Size(1310, 100);
             this.txtConsole.TabIndex = 23;
             this.txtConsole.WordWrap = false;
-            // 
-            // exportFileBtn
-            // 
-            this.exportFileBtn.Location = new System.Drawing.Point(39, 276);
-            this.exportFileBtn.Name = "exportFileBtn";
-            this.exportFileBtn.Size = new System.Drawing.Size(110, 49);
-            this.exportFileBtn.TabIndex = 4;
-            this.exportFileBtn.Text = "Xuất file";
-            this.exportFileBtn.UseVisualStyleBackColor = true;
-            this.exportFileBtn.Click += new System.EventHandler(this.exportFileBtn_Click);
             // 
             // Form1
             // 

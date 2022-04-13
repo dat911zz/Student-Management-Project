@@ -1,6 +1,7 @@
 ﻿using Castle.Windsor;
 using StudentManagement.Data.Database;
 using StudentManagement.Installer;
+using StudentManagement.Interface.IData;
 using StudentManagement.Models;
 using StudentManagement.Services;
 using System;
@@ -28,8 +29,8 @@ namespace StudentManagement.Utilites
         }
         public void AutoDKHP(ref List<SinhVien> list_sv, List<MonHoc> list_mh)
         {
-            SQL db = new SQL();
-            db.AutoImportMonHocForAllList(ref list_sv, list_mh);
+            ICTHocPhanData CTHP_data = container.Resolve<ICTHocPhanData>();
+            CTHP_data.GetAllCTHP(ref list_sv, list_mh);          
         }
         public void AutoImportScore(List<SinhVien> list_sv)
         {

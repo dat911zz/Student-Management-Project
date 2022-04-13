@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StudentManagement.Utilites
 {
-    public class DatabaseHelper
+    public static class DatabaseHelper
     {
         /// <summary>
         /// Generate a connection string of database
@@ -15,7 +15,7 @@ namespace StudentManagement.Utilites
         /// <param name="db">Database name</param>
         /// <param name="username">Name of user</param>
         /// <param name="pass">Password of the user</param>
-        public string GenerateConnectionString(string datasource, string db, string username, string pass)
+        public static string GenerateConnectionString(string datasource, string db, string username, string pass)
         {
             //
             // Data Source=<Server-Name>;Initial Catalog=<table>;Persist Security Info=True;User ID=<username>;Password=<password>

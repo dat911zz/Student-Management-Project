@@ -65,7 +65,9 @@
     <Compile Include="Data\Database\SQL.cs" />
     <Compile Include="Data\Database\XML.cs" />
     <Compile Include="Data\Files\SinhVienFile.cs" />
+    <Compile Include="Data\ORM\Dapper.cs" />
     <Compile Include="Installer\ServicesInstaller.cs" />
+    <Compile Include="Interface\IData\ICTHocPhanData.cs" />
     <Compile Include="Interface\IData\IMonHocData.cs" />
     <Compile Include="Interface\IData\ISinhVienData.cs" />
     <Compile Include="Interface\IServices\IMonHocService.cs" />
@@ -140,7 +142,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Data\ORM\" />
     <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

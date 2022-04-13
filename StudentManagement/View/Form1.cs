@@ -99,6 +99,7 @@ namespace StudentManagement
 
         private void exportFileBtn_Click(object sender, EventArgs e)
         {
+            txtConsole.Clear();
             string jsonString = JsonConvert.SerializeObject(list_sv);
             var hash = Math.Abs(DateTime.Now.GetHashCode());
             string fname = $"fileData_{hash}.json";
