@@ -19,6 +19,7 @@ namespace StudentManagement.View
     {
         SqlConnection conn = new SqlConnection(new SQL().GetConnection("", "SinhVien", "test01", "1234").ConnectionString);
         SearchBoxController boxC = new SearchBoxController();
+        DGVController dgvC = new DGVController();
         List<SinhVien> list_sv { get; set; }
         public InputForm(List<SinhVien> list_sv)
         {
@@ -153,20 +154,7 @@ namespace StudentManagement.View
                     grid.Height = 200;
                     grid.DataSource = mng.UploadDiemSVIntoDGV(item);
 
-                    for (int i = 0; i < item.CTHP.DSMH.Count; i++)
-                    {
-                        if (int.Parse(grid.Rows[i].Cells[3].Value.ToString()) < 5)
-                        {
-                            grid.Rows[i].Cells[3].Style.BackColor = Color.Red;
-                        }
-                        if (int.Parse(grid.Rows[i].Cells[4].Value.ToString()) < 5)
-                        {
-                            grid.Rows[i].Cells[4].Style.BackColor = Color.Red;
-                        }
-                    }
-
-                    grid.Columns[0].Width = 50;//Chỉnh độ rộng của cột STT
-                    grid.Columns[2].Width = 50;//Chỉnh độ rộng cột số tiết
+                    dgvC.ScoreCustoms(grid, item);
                     MonHocBox.Enabled = true;
                     FillMonHocBox();
                     return;

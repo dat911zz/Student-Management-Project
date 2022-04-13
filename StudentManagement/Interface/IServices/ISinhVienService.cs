@@ -11,5 +11,6 @@ namespace StudentManagement.Interface.IServices
     {
         List<SinhVien> GetAll();
         SinhVien Create(string ma, string ten, string gioitinh, DateTime ns, string lop, string khoa);
+        void GetInfo(SinhVien sv);
     }
 }

@@ -1,5 +1,6 @@
 ﻿using StudentManagement.Interface.IData;
 using StudentManagement.Models;
+using StudentManagement.Utilites;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -12,18 +13,17 @@ namespace StudentManagement.Data.Database
     /// <summary>
     /// Interacting with SQL Databse 
     /// </summary>
-    public class SQL : ISinhVienData, IMonHocData
+    public class SQL : ISinhVienData, IMonHocData, ICTHocPhanData
     {
         //---log test server name : DESKTOP-GUE0JS7
         SqlCommand cmd;
         SqlDataAdapter da;
         SqlCommandBuilder builder;
         DataTable tb;
-        Utilites.DatabaseHelper unt = new Utilites.DatabaseHelper();
         //Khởi tạo kết nối tới CSDL
         public SqlConnection GetConnection(string datasource, string database, string username, string password)
         {
-            SqlConnection conn = new SqlConnection(unt.GenerateConnectionString(datasource, database, username, password));
+            SqlConnection conn = new SqlConnection(DatabaseHelper.GenerateConnectionString(datasource, database, username, password));
             return conn;
 
         }
@@ -124,7 +124,7 @@ namespace StudentManagement.Data.Database
             return list;
         }
         
-        public void AutoImportMonHocForAllList(ref List<SinhVien> list_sv, List<MonHoc> list_mh)
+        public void GetAllCTHP(ref List<SinhVien> list_sv, List<MonHoc> list_mh)
         {
             List<MonHoc> list = new List<MonHoc>();
             SqlConnection conn = GetConnection();
@@ -156,6 +156,16 @@ namespace StudentManagement.Data.Database
             }
         }
         public void Add(SinhVien sv)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Add(MonHoc sv)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Add(CTHocPhan cthp)
         {
             throw new NotImplementedException();
         }

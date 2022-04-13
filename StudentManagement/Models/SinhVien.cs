@@ -18,6 +18,10 @@ namespace StudentManagement.Models
         /// <summary>
         /// Class for SinhVien
         /// </summary>
+        public SinhVien()
+        {
+            this.CTHP = new CTHocPhan();
+        }
         public SinhVien(string ma, string ten, string gioitinh, DateTime ngaysinh, string lop, string khoa)
         {
             this.MaSV = ma;

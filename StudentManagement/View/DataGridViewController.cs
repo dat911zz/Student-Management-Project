@@ -1,7 +1,9 @@
 ﻿using StudentManagement.Data.Database;
+using StudentManagement.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,6 +35,29 @@ namespace StudentManagement.View
                     dgv.Rows[i].Cells[0].Value = i + 1;
                 }
             }
+        }
+        public void ScoreCustoms(DataGridView grid, SinhVien item)
+        {
+            for (int i = 0; i < item.CTHP.DSMH.Count; i++)
+            {
+                if (int.Parse(grid.Rows[i].Cells[3].Value.ToString()) < 5)
+                {
+                    grid.Rows[i].Cells[3].Style.BackColor = Color.Red;
+                }
+                if (int.Parse(grid.Rows[i].Cells[4].Value.ToString()) < 5)
+                {
+                    grid.Rows[i].Cells[4].Style.BackColor = Color.Red;
+                }
+                if (grid.Rows[i].Cells[5].Value.ToString() == "Trượt")
+                {
+                    grid.Rows[i].Cells[5].Style.BackColor = Color.Red;
+                }
+
+            }
+
+            grid.Columns[0].Width = 50;//Chỉnh độ rộng của cột STT
+            grid.Columns[2].Width = 50;//Chỉnh độ rộng cột số tiết
+            grid.Columns[4].Width = 110;//Chỉnh độ rộng cột điểm thành phần
         }
     }
 }
