@@ -132,23 +132,27 @@ namespace StudentManagement.Data.Database
             cmd = new SqlCommand("SELECT * FROM DKHP", conn);
             using (DbDataReader reader = cmd.ExecuteReader())
             {
-                int i = 0;
+                int i = 0, mh = 0;
                 if (reader.HasRows)
                 {
                     while (reader.Read())
                     {
                         List<MonHoc> tmp = new List<MonHoc>(list_mh.ToArray());
                         //-------------INPUT DATA----------------
-                        for (int mh_i = 0; mh_i < reader.FieldCount; mh_i++)
+                        for (int col = 0; col < reader.FieldCount; col++)
                         {
-                            if (reader.GetInt32(mh_i) == 1)
+                            if (col > 1)
                             {
-                                //========Deep copy========= 
-                                MonHoc c = new MonHoc(tmp[mh_i]);
-                                //list_sv[i].MHDK.Add((MonHoc)c);
-                                list_sv[i].CTHP.DSMH.Add(new KetQua(new MonHoc(c), new Diem()));
+                                if (reader.GetInt32(col) == 1)
+                                {
+                                    //========Deep copy========= 
+                                    MonHoc c = new MonHoc(tmp[mh++]);
+                                    list_sv[i].CTHP.DSMH.Add(new KetQua(new MonHoc(c), new Diem()));
+                                }
                             }
+                            
                         }
+                        mh = 0;
                         i++;
                     }
                 }
