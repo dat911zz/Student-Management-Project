@@ -1,6 +1,7 @@
 ﻿using Castle.Windsor;
 using Newtonsoft.Json;
 using StudentManagement.Data.Database;
+using StudentManagement.Data.ORM;
 using StudentManagement.Installer;
 using StudentManagement.Interface.IServices;
 using StudentManagement.Models;
@@ -47,7 +48,7 @@ namespace StudentManagement
         {
             TextBoxWriter writer = new TextBoxWriter(txtConsole);
             Console.SetOut(writer);
-            this.CenterToScreen();          
+            this.CenterToScreen();
         }
 
         private void GetDataBtn_Click(object sender, EventArgs e)
@@ -61,6 +62,11 @@ namespace StudentManagement
             mng.AutoWork(ref list_sv, list_mh);          
             dgvc.BindDataGridView(dataGridView1);
             Console.WriteLine("Get data successfully!");
+
+            //var a = new NHibernate_();
+            //a.GetDataSV(list_sv);
+
+            
         }
 
         private void SearchBtn_Click(object sender, EventArgs e)

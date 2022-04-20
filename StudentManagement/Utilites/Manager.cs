@@ -18,9 +18,11 @@ namespace StudentManagement.Utilites
         WindsorContainer container;
         public Manager()
         {
+            #region Install container
             container = new WindsorContainer();
             container.Install(new ServicesInstaller());
             container.Dispose();
+            #endregion
         }
         public void AutoWork(ref List<SinhVien> list_sv, List<MonHoc> list_mh)
         {
@@ -37,6 +39,10 @@ namespace StudentManagement.Utilites
             ICTHocPhanData CTHP_data = container.Resolve<ICTHocPhanData>();
             CTHP_data.GetAllCTHP(ref list_sv, list_mh);          
         }
+        /// <summary>
+        /// Nhập điểm tự động
+        /// </summary>
+        /// <param name="list_sv"></param>
         public void AutoImportScore(List<SinhVien> list_sv)
         {
             Random score1 = new Random();
@@ -51,6 +57,7 @@ namespace StudentManagement.Utilites
                 }
             }
         }
+        #region Xuất console thông tin về sv
         public void GetInfoForm(List<SinhVien> list_sv)
         {
             KetQuaService kqs = container.Resolve<KetQuaService>();
@@ -63,7 +70,6 @@ namespace StudentManagement.Utilites
                 }
             }
         }
-
         public void GetAllListInfo(List<SinhVien> list_sv)
         {
             KetQuaService kqs = container.Resolve<KetQuaService>();
@@ -86,6 +92,8 @@ namespace StudentManagement.Utilites
                 }
             });
         }
+        #endregion
+        #region Tải thông tin lên bảng ảo
         public DataTable UploadMonHocSVIntoDGV(SinhVien sv)
         {
             int stt = 1;
@@ -119,5 +127,6 @@ namespace StudentManagement.Utilites
             }
             return dt;
         }
+        #endregion
     }
 }

@@ -27,9 +27,16 @@ namespace StudentManagement.Installer
             container.Register(
                 Component
                     .For<IMonHocData, ISinhVienData, ICTHocPhanData>()
+                    .ImplementedBy<Data.ORM.NHibernate_>()
+                    .DependsOn(Dependency.OnValue("connectionString", DatabaseHelper.GenerateConnectionString("", "SinhVien", "test01", "1234")))
+                    );
+            container.Register(
+                Component
+                    .For<IMonHocData, ISinhVienData, ICTHocPhanData>()
                     .ImplementedBy<Data.ORM.Dapper>()
                     .DependsOn(Dependency.OnValue("connectionString", DatabaseHelper.GenerateConnectionString("","SinhVien","test01","1234")))
                     );
+            
             container.Register(
                 Component
                     .For<IMonHocData, ISinhVienData, ICTHocPhanData>()
