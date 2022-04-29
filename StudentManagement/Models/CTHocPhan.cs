@@ -13,5 +13,6 @@ namespace StudentManagement.Models
             DSMH = new List<KetQua>();
         }
         public virtual List<KetQua> DSMH { get; set; }
+
     }
 }
